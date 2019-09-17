@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Github</title>
+    <style>
+        th, td {
+            padding: 10px;
+            border: 1px solid lightgrey;
+        }
+        #copyright {
+            color: gray;
+            font-size: 12px;
+            float: left;
+            padding-right: 5px;
+        }
+        footer {
+            padding-top: 15px;
+        }
+        #tabs {
+            background-color: lightgrey;
+        }
+        A:hover { COLOR: lightgrey; TEXT-DECORATION: none; font-weight: none }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
+        <nav style="background-color: grey">
             <a href="https://github.com"><img src="img/30.svg"></a>
-            <a href="">Pull requests</a>
-            <a href="">Issues</a>
-            <a href="">Marketplace</a>
-            <a href="">Explore</a>
+            <a href="https://github.com/pulls">Pull requests</a>
+            <a href="https://github.com/issues">Issues</a>
+            <a href="https://github.com/marketplace">Marketplace</a>
+            <a href="https://github.com/explore">Explore</a>
         </nav>
     </header>
     <main>
@@ -26,22 +45,22 @@
         <a href="">Settings</a>
     </div>
     <div id="devTeam">
-        <h3>Codeup's dev team</h3>
+        <h3 style="background-color: lightgrey">Codeup's dev team</h3>
         <table>
             <tr>
-                <td><img src="img/30.svg">Kent Beck</td>
-                <td>Member</td>
-                <td>1 team</td>
+                <td><img src="img/30.svg"><a href="https://github.com/KentBeck">Kent Beck</a></td>
+                <td style="padding-top: 25px">Member</td>
+                <td style="padding-top: 25px">1 team</td>
             </tr>
             <tr>
-                <td><img src="img/30.svg">Codeup Instruction Staff</td>
-                <td>Member</td>
-                <td>1 team</td>
+                <td><img src="img/30.svg"><a href="https://github.com/CodeupInstructors"> Instruction Staff</a></td>
+                <td style="padding-top: 25px">Member</td>
+                <td style="padding-top: 25px">1 team</td>
             </tr>
             <tr>
-                <td><img src="img/30.svg">Martin Fowler</td>
-                <td>Member</td>
-                <td>0 Teams</td>
+                <td><a><img src="img/30.svg"><a href="https://github.com/acesaver">Martin Fowler</a></td>
+                <td style="padding-top: 25px">Member</td>
+                <td style="padding-top: 25px">0 Teams</td>
             </tr>
         </table>
     </div>
