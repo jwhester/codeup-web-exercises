@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <style>
+        .img {
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Veridian Dynamics!</h1>
+        <h1 id="top">Welcome to Veridian Dynamics!</h1>
         <p>At veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>. </p>
         <hr>
     </header>
@@ -34,10 +41,10 @@
         </div>
         <div id="pictures">
             <h2>Company Vision</h2>
-            <img src="img/mount.jpg" alt="dude climbing a mountain">
-            <img src="img/persistence.jpg" alt="man chaising woman">
-            <img src="img/row.png" alt="dudes rowing on a lake">
-            <img src="img/success.jpg" alt="eagle soaring">
+            <img src="img/mount.jpg" class="img" alt="dude climbing a mountain">
+            <img src="img/persistence.jpg" class="img" alt="man chaising woman">
+            <img src="img/row.png" class="img" alt="dudes rowing on a lake">
+            <img src="img/success.jpg" class="img" alt="eagle soaring">
         </div>
         <div id="ourProduct">
             <h1>Our Product</h1>
@@ -65,6 +72,7 @@
                 <p><em>All products come with our quality gaurantee®</em></p>
             </table>
         </div>
+        <a href="#top">Go to the top of the page.</a>
     </main>
 </body>
 </html>
