@@ -6,7 +6,7 @@
 </head>
 <body>
     <main>
-        <div id="form">
+        <div id="forms">
             <form method="POST" action="https://request-inspector.glitch.me/">
                 <label for="email">Email</label>
                 <input id="email" name="email" type="text">
@@ -16,19 +16,25 @@
                 <input id="password" name="password" type="password">
                 <br>
 
-                <textarea name="bio">Fill out a short description of yourself.</textarea>
+                <textarea name="bio" placeholder="Fill out a short description of yourself."></textarea>
+                <br>
+
+                <label for="radio">How did you hear about us?</label>
+                <br>
+
+                <input id="radio" type="radio" name="selection" value="billboard"> Billboard
+                <br>
+
+                <input type="radio" name="selection" value="radioAdvertisement"> Radio Advertisement
+                <br>
+
+                <input type="radio" name="selection" value="internetAdvertisement"> Internet Advertisement
+                <br>
+
+                <input type="radio" name="selection" value="other"> Other
                 <br>
 
                 <input type="submit">
-            </form>
-        </div>
-        <div id="radio">
-            <h2>How did you hear about us?</h2>
-            <form>
-                <input type="radio" name="selection" value="billboard"> Billboard<br>
-                <input type="radio" name="selection" value="radioAdvertisement"> Radio Advertisement<br>
-                <input type="radio" name="selection" value="internetAdvertisement"> Internet Advertisement<br>
-                <input type="radio" name="selection" value="other"> Other<br>
             </form>
         </div>
     </main>
