@@ -1,4 +1,23 @@
+body {
+    background-color: antiquewhite;
+}
+
+#companyLogo{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+   /* position: relative; */
+    left: 50px;
+
+}
 .fancy-header {
+    color: purple;
+    text-decoration: underline;
+    text-align: center;
+
+}
+
+.main-header{
     color: purple;
     text-decoration: underline;
 }
