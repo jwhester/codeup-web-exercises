@@ -3,36 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Register With Us</title>
+    <style>
+        textarea:focus, input:focus {
+            border: 2px solid indianred;
+            background-color: antiquewhite;
+        }
+
+        #forms {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #login, #bio, #radioForm, #browser {
+            padding: 10px;
+        }
+
+    </style>
 </head>
 <body>
     <main>
         <div id="forms">
             <form method="POST" action="https://request-inspector.glitch.me/">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="text">
+                <div id="login">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="text">
+                    <br>
+
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password">
+                    <br>
+                </div>
+
+                <textarea id="bio" name="bio" placeholder="Fill out a short description of yourself."></textarea>
                 <br>
 
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password">
-                <br>
+                <section id="radioForm" class="section">
+                    <label for="radio">How did you hear about us?</label>
+                    <br>
 
-                <textarea name="bio" placeholder="Fill out a short description of yourself."></textarea>
-                <br>
+                    <input id="radio" type="radio" name="selection1" value="billboard"> Billboard
+                    <br>
 
-                <label for="radio">How did you hear about us?</label>
-                <br>
+                    <input type="radio" name="selection2" value="radioAdvertisement"> Radio Advertisement
+                    <br>
 
-                <input id="radio" type="radio" name="selection" value="billboard"> Billboard
-                <br>
+                    <input type="radio" name="selection3" value="internetAdvertisement"> Internet Advertisement
+                    <br>
 
-                <input type="radio" name="selection" value="radioAdvertisement"> Radio Advertisement
-                <br>
+                    <input type="radio" name="selection4" value="other"> Other
+                    <br>
 
-                <input type="radio" name="selection" value="internetAdvertisement"> Internet Advertisement
-                <br>
+                </section>
 
-                <input type="radio" name="selection" value="other"> Other
-                <br>
+                <div id="browser">
+                    <label for="internetBrowser">Which internet browser are you using?</label>
+                    <select id="internetBrowser" name="internetBrowser">
+                        <option value="internetExplorer">Internet Explorer</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="firefox">Firefox</option>
+                        <option value="safari">Safari</option>
+                    </select>
+                    <br>
+                </div>
 
                 <input type="submit">
             </form>
