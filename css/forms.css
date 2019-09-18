@@ -1,0 +1,86 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Barriecito', cursive;
+    font-size: large;
+}
+textarea {
+    background: url("../img/veridian-logo.png") center center no-repeat;
+    background-size: 250px;
+    box-shadow: 10px 10px 5px grey;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-weight: bold;
+    font-size: large;
+
+}
+textarea:focus, input:focus {
+    border: 2px solid blue;
+    background-color: aliceblue;
+    color: ;
+    font-weight: bold;
+    font-size: large;
+}
+
+::placeholder {
+    color: whitesmoke;
+    font-family: 'Barriecito', cursive;
+    text-shadow: 2px 2px 3px black, 0 0 30px darkgray, 0 0 5px black ;
+    font-weight: bold;
+    font-size: large;
+}
+
+#bio {
+    border: 2px solid #765942;
+    border-radius: 10px;
+    height: 60px;
+    width: 230px;
+}
+
+#forms {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#login, #bio, #radioForm, #browser {
+    padding: 10px;
+}
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+.button {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background: dodgerblue;
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Barriecito', cursive;
+    font-size: large;
+}
+button:hover {
+    animation: bounce 1s;
+    color: rosybrown;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+
