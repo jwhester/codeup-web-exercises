@@ -1,29 +1,160 @@
 body {
-    background-color: antiquewhite;
+    background-color: #5CDB95;
+    background-image: url("../img/veridian-logo.png"), url("../img/veridian-logo.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right top;
+    background-size: 70px, 70px;
+    font-family: 'Federo', sans-serif;
+    color: #EDF5E1;
+    background-attachment: fixed;
+
 }
 
-#companyLogo{
-    width: 100px;
-    height: 100px;
+h1, h2 {
+    background-color: #05386B;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+    font-family: 'Federant', cursive;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+#lists {
+    text-align: center;
+}
+
+#lists ul, ol {
+    display: inline-block;
+    text-align: initial;
     padding: 10px;
-   /* position: relative; */
-    left: 50px;
-
 }
+
+#lists>ul {
+    list-style-type: square;
+}
+
+#lists>ol {
+    list-style-type: upper-alpha;
+}
+
 .fancy-header {
-    color: purple;
-    text-decoration: underline;
+    color: #EDF5E1;
+    text-decoration: ;
     text-align: center;
 
 }
 
 .main-header{
-    color: purple;
+    color: #EDF5E1;
+    background-color: #05386B;
     text-decoration: underline;
+    text-align: center;
 }
+
+#pictures {
+    width: 50%;
+    margin-left: 30%;
+}
+
 .img {
     width: 300px;
     height: 300px;
     text-align: center;
     padding: 10px;
+    cursor: crosshair;
+}
+
+.img:hover {
+    box-shadow: 0px 0px 15px #EDF5E1;
+    border-radius: 10px;
+}
+
+.grow, .grow1 {
+    transition: all .1s ease-in-out;
+    cursor: crosshair;
+}
+
+.grow:hover {
+    transform: scale(1.5);
+    color: #05386B;
+}
+
+.grow1:hover {
+    transform: scale(1.5);
+    color:firebrick;
+}
+
+button{
+    background-color: #05386B;
+    font-size:16px;
+    color: #EDF5E1;
+    transition: all 0.3s ease-in-out;
+    text-decoration:none;
+    border-radius: 10px;
+    width: 23%;
+    margin-left: 38%;
+
+}
+
+button:hover {
+    text-shadow: 1px 0px 20px #EDF5E1;
+    animation: bounce 1.5s;
+    color: #05386B;
+    background-color: #379683;
+    cursor: crosshair;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+#table {
+    margin: 0px auto;
+    padding: 10px;
+}
+
+#table:hover {
+    background-color: #8EE4AF;
+    box-shadow: 0px 0px 15px #EDF5E1;
+    border-radius: 10px;
+
+}
+
+th {
+    text-decoration: underline;
+    font-size: 18px;
+    padding: 5px;
+    color: #05386B;
+}
+
+.price {
+    padding: 10px;
+}
+
+hr {
+    border: none;
+    height: 20px;
+    width: 90%;
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid #EDF5E1;
+    box-shadow: 0 20px 20px -20px #05386B;
+    margin: -50px auto 10px;
 }
