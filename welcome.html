@@ -10,8 +10,9 @@
 <body>
     <header>
         <h1 class="main-header">Welcome to Veridian Dynamics!</h1>
-        <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>.</p>
+        <p id="secretMessage">At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>.</p>
         <hr>
+        <br>
         <table class="buttonsCenter">
             <tr>
                 <td><input class="buttons" type="button" value="Core Values" onclick="showDiv0()"></td>
@@ -21,46 +22,56 @@
                 <td><input class="buttons" type="button" value="Our Product" onclick="showDiv4()"></td>
             </tr>
         </table>
+
+        <br>
         <hr>
     </header>
     <main>
         <div id="coreValues" style="display: none">
             <h2 class="header">Core Values</h2>
-            <ul class="grow">
+            <ul id="coreValuesInner" class="flip-horizontal-bottom" ">
                 <li>Competence</li>
                 <li>Involvement</li>
                 <li>Technology</li>
             </ul>
+            <br>
+            <hr>
         </div>
         <div id="ourProcess" style="display: none">
             <h2 class="header">Our Process</h2>
-            <ol class="grow">
+            <ol class="vibrate">
                 <li>Plan</li>
                 <li>Evaluate</li>
                 <li>Implement</li>
             </ol>
+            <br>
+            <hr>
         </div>
         <div id="vision" style="display: none">
             <h2 class="header">2020 Vision</h2>
-            <ul class="grow">
-                <li>Become #1 in Technology</li>
+            <ul class="winning">
+                <li><a>#1 in Technology</a></li>
                 <li>Increase Success by 20%</li>
                 <li>Increase Business by 30%</li>
             </ul>
+            <br>
+            <hr>
         </div>
         <div id="companyVision" style="display: none">
             <h2 class="header">Company Vision</h2>
             <div id="pictures">
-                <img src="img/bulbasaur_minimalist_by_arekcrisis_d7zqf6i-fullview.jpg" class="img" alt="the pokemon named bulbasaur">
-                <img src="img/fantasy-art-nature-minimalism-trees-wallpaper.jpg" class="img" alt="tree art">
+                <img src="img/life.jpg" class="img" alt="Life. Better">
+                <img src="img/cancel.png" class="img" alt="You cancel us, we cancel you.">
                 <br>
-                <img src="img/pacman.jpeg" class="img" alt="pacman.... if it was a bush">
-                <img src="img/tree-minimalism-hd.jpg" class="img" alt="minimalist tree">
+                <img src="img/drugs.jpg" class="img" alt="Drugs. They take the edge off.">
+                <img src="img/stealing.jpg" class="img" alt="Friendship. It's the same as stealing.">
             </div>
+            <br>
+            <hr>
         </div>
         <div id="ourProduct" style="display: none">
             <h1 class="header">Our Product</h1>
-            <table id="table" class="grow1">
+            <table id="table" class="grow">
                 <tr>
                     <th>Plan</th>
                     <th>Price</th>
@@ -81,13 +92,15 @@
                     <td class="price">$499</td>
                     <td>Unlimited Support</td>
                 </tr>
-                <p><em>All products come with our quality guarantee®</em></p>
             </table>
+            <p><em>All products come with our quality guarantee®</em></p>
+            <br>
+            <hr>
         </div>
         <footer>
             <br>
             <br>
-            <a href="forms.html"><button>Register</button></a>
+            <a href="forms.html"><button id="button">Register</button></a>
             <br>
             <br>
         </footer>
