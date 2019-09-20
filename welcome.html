@@ -4,48 +4,62 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/welcome.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Federant|Federo&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 id="top" class="fancy-header">Welcome to Veridian Dynamics!</h1>
-        <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>. </p>
+        <h1 class="main-header">Welcome to Veridian Dynamics!</h1>
+        <p>At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>.</p>
+        <hr>
+        <table class="buttonsCenter">
+            <tr>
+                <td><input class="buttons" type="button" value="Core Values" onclick="showDiv0()"></td>
+                <td><input class="buttons" type="button" value="Our Process" onclick="showDiv1()"></td>
+                <td><input class="buttons" type="button" value="2020 Vision" onclick="showDiv2()"></td>
+                <td><input class="buttons" type="button" value="Company Vision" onclick="showDiv3()"></td>
+                <td><input class="buttons" type="button" value="Our Product" onclick="showDiv4()"></td>
+            </tr>
+        </table>
         <hr>
     </header>
     <main>
-        <br>
-        <div id="lists">
-            <h2 id="coreValues" class="main-header">Core Values</h2>
+        <div id="coreValues" style="display: none">
+            <h2 class="header">Core Values</h2>
             <ul class="grow">
                 <li>Competence</li>
                 <li>Involvement</li>
                 <li>Technology</li>
             </ul>
-            <h2 id="ourProcess" class="main-header">Our Process</h2>
+        </div>
+        <div id="ourProcess" style="display: none">
+            <h2 class="header">Our Process</h2>
             <ol class="grow">
                 <li>Plan</li>
                 <li>Evaluate</li>
                 <li>Implement</li>
             </ol>
-            <h2 id="vision" class="main-header">2020 Vision</h2>
+        </div>
+        <div id="vision" style="display: none">
+            <h2 class="header">2020 Vision</h2>
             <ul class="grow">
                 <li>Become #1 in Technology</li>
                 <li>Increase Success by 20%</li>
                 <li>Increase Business by 30%</li>
             </ul>
         </div>
-        <hr>
-        <br>
-        <h2 class="main-header">Company Vision</h2>
-        <div id="pictures">
-            <img src="img/bulbasaur_minimalist_by_arekcrisis_d7zqf6i-fullview.jpg" class="img" alt="the pokemon named bulbasaur">
-            <img src="img/fantasy-art-nature-minimalism-trees-wallpaper.jpg" class="img" alt="tree art">
-            <br>
-            <img src="img/pacman.jpeg" class="img" alt="pacman.... if it was a bush">
-            <img src="img/tree-minimalism-hd.jpg" class="img" alt="minimalist tree">
+        <div id="companyVision" style="display: none">
+            <h2 class="header">Company Vision</h2>
+            <div id="pictures">
+                <img src="img/bulbasaur_minimalist_by_arekcrisis_d7zqf6i-fullview.jpg" class="img" alt="the pokemon named bulbasaur">
+                <img src="img/fantasy-art-nature-minimalism-trees-wallpaper.jpg" class="img" alt="tree art">
+                <br>
+                <img src="img/pacman.jpeg" class="img" alt="pacman.... if it was a bush">
+                <img src="img/tree-minimalism-hd.jpg" class="img" alt="minimalist tree">
+            </div>
         </div>
-        <div id="ourProduct">
-            <h1 class="main-header">Our Product</h1>
+        <div id="ourProduct" style="display: none">
+            <h1 class="header">Our Product</h1>
             <table id="table" class="grow1">
                 <tr>
                     <th>Plan</th>
@@ -67,13 +81,13 @@
                     <td class="price">$499</td>
                     <td>Unlimited Support</td>
                 </tr>
-                <p><em>All products come with our quality gaurantee®</em></p>
+                <p><em>All products come with our quality guarantee®</em></p>
             </table>
         </div>
         <footer>
             <br>
             <br>
-            <a href="#top"><button>Go to top of the page!</button></a>
+            <a href="forms.html"><button>Register</button></a>
             <br>
             <br>
         </footer>
