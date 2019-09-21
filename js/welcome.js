@@ -1,9 +1,9 @@
 function showDiv0() {
-    var x = document.getElementById("coreValues");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    var x = document.getElementById("coreValues"); /*Creates var that targets the div*/
+    if (x.style.display === "none") { /*If the div is hidden when you click the button*/
+        x.style.display = "block"; /*div becomes visible.*/
     } else {
-        x.style.display = "none";
+        x.style.display = "none"; /*If the div is visible when you click the button the div will become hidden.*/
     }
 }
 

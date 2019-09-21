@@ -1,7 +1,13 @@
 /*TABLE OF CONTENTS
 Section 1: page styles
-Section 2: navigation menu
-Section 3: images styles for company vision tab*/
+Section 2: company message below main-header
+Section 3: navigation menu
+Section 4: core vision styles
+Section 5: our process styles
+Section 6: 2020 vision styles
+Section 7: company vision styles
+Section 8: our product styles
+Section 9: register button in the footer section*/
 
 /*Section 1*/
 body {
@@ -16,10 +22,11 @@ body {
 }
 
 .main-header {
-    color: whitesmoke;
-    text-decoration: ;
+    font-weight: bold;
+    background: -webkit-linear-gradient(whitesmoke, ghostwhite, turquoise, darkturquoise);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
-
 }
 
 .header{
@@ -34,7 +41,7 @@ body {
     border-radius: 10px;
 }
 
-hr {
+hr {  /*Do not delete additional height or margin. Not sure why this works, but it does*/
     border: none;
     height: 20px;
     width: 90%;
@@ -68,17 +75,17 @@ ol {
     list-style-type: upper-roman;
 }
 
-/*Section*/
+/*Section 2*/
 #secretMessage:hover {
     color: transparent;
 }
 #secretMessage:hover:before {
     color: red;
-    margin-left: 22%;
-    content: "Veridian Dynamics. We don't even we know what we do.";
+    margin-left: 25%;
+    content: "Veridian Dynamics. Not even we know what we do.";
 }
 
-/*Section 2*/
+/*Section 3*/
 table.buttonsCenter {
     margin-left:auto;
     margin-right:auto;
@@ -96,7 +103,7 @@ table.buttonsCenter {
     cursor: crosshair;
 }
 
-/*Section*/
+/*Section 4*/
 #coreValuesInner {
     font-size: 20px;
 }
@@ -129,8 +136,7 @@ table.buttonsCenter {
     list-style: disc;
 }
 
-/*Section*/
-
+/*Section 5*/
 @-webkit-keyframes vibrate {
     0% {
         -webkit-transform: translate(0);
@@ -159,6 +165,9 @@ table.buttonsCenter {
         transform: translate(0);
     }
 }
+.vibrate>li {
+    list-style-image: url("../img/duck.png");
+}
 
 .vibrate {
     font-size: 18px;
@@ -166,21 +175,17 @@ table.buttonsCenter {
     animation: vibrate 0.3s linear infinite both;
 }
 
-/*Section*/
+/*Section 6*/
 .winning:hover {
     color: transparent;
-
-
 }
+
 .winning:hover:before {
     content: url("../img/winning.jpg");
     display: block;
 }
 
-
-
-
-/*Section 3*/
+/*Section 7*/
 #pictures {
     width: 50%;
     margin-left: 30%;
@@ -199,8 +204,7 @@ table.buttonsCenter {
     border-radius: 10px;
 }
 
-
-/*Section 4*/
+/*Section 8*/
 th {
     text-decoration: underline;
     font-size: 18px;
@@ -224,7 +228,7 @@ th {
 }
 
 
-/*Section 5*/
+/*Section 9*/
 #button{
     background-color: darkturquoise;
     font-size:16px;
@@ -234,7 +238,6 @@ th {
     border-radius: 10px;
     width: 23%;
     margin-left: 38%;
-
 }
 
 #button:hover {
