@@ -171,6 +171,7 @@ table.buttonsCenter {
 
 .vibrate {
     font-size: 18px;
+    margin-bottom: 5%;
     -webkit-animation: vibrate 0.3s linear infinite both;
     animation: vibrate 0.3s linear infinite both;
 }
