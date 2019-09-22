@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Credit Card Information</title>
+</head>
+<body>
+    <form method="Post" action="https://request-inspector.glitch.me/">
+
+        <label for="CCNumber" >Credit Card Number</label>
+        <input id="CCNumber" name="CCNumber" type="number" required>
+        <br>
+
+        <label for="expMonth">Expiration Month</label>
+        <select id="expMonth" name="expMonth">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+
+        <label for="expYear">Expiration Year</label>
+        <select id="expYear" name="expYear">
+            <option value="19">2019</option>
+            <option value="20">2020</option>
+            <option value="21">2021</option>
+            <option value="22">2022</option>
+            <option value="23">2023</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+        </select>
+        <br>
+
+        <label for="CV2">CV2</label>
+        <input id="CV2" name="CV2" type="number" required>
+        <br>
+        <br>
+
+        <label for="Name">Your Name</label>
+        <input id="name" name="name" type="text" required>
+        <br>
+
+        <label for="Address">Your Address</label>
+        <input id="Address" name="Address" type="text" required>
+        <br>
+
+        <label for="City">City</label>
+        <input id="City" name="City" type="text" required>
+        <br>
+
+        <label for="State">State</label>
+        <input id="State" name="State" type="text" required>
+        <br>
+
+        <label for="zip">Zip Code</label>
+        <input id="Zip" name="Zip" type="number" required>
+        <br>
+        <br>
+
+        <input name="keepCard" value="true" type="checkbox">Keep this credit card on file for future transactions.<br>
+        <br>
+
+        <button type="submit" style="font-size: 15px; background-color: red; color: white; border-radius: 10px">Buy Now!</button>
+    </form>
+</body>
+</html>
