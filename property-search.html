@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Search</title>
+</head>
+<body>
+<div style="background-color: deepskyblue">
+    <h1 style="color: white; font-family: 'American Typewriter'">Property Search</h1>
+</div>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <h3>Property Type</h3>
+        <input type="radio" name="property_type" value="residential"><img src="img/residential.svg" height="50px">Residential</input>
+        <input type="radio" name="property_type" value="commercial"><img src="img/commercial.svg" height="50px">Commercial</input>
+        <input type="radio" name="property_type" value="industrial"><img src="img/industrial.svg" height="50px">Industrial</input>
+        <input type="radio" name="property_type" value="vacantLand"><img src="img/vacantland.svg" height="50px">Vacant Land</input>
+    <br>
+    <br>
+
+    <h3>Square Footage</h3>
+    <select name="area">
+        <option value="1">< 1000 sqft</option>
+        <option value="2">1000-2000 sqft</option>
+        <option value="3">2000-3000 sqft</option>
+        <option value="4">> 3000 sqft</option>
+    </select>
+    <br>
+    <br>
+
+    <label for="min_price" style="font-weight: bold">Minimum Price:</label>
+    <input id="min_price" name="min_price" type="text">
+
+    <label for="max_price" style="font-weight: bold">Maximum Price:</label>
+    <input id="max_price" name="max_price" type="text">
+    <br>
+    <br>
+
+    <label for="zipcode" style="font-weight: bold">Zipcode:</label>
+    <input id="zipcode" name="zipcode" type="text">
+    <br>
+    <br>
+
+    <h3>Bedrooms:</h3>
+    <select name="bedroom">
+        <option value="1">0</option>
+        <option value="2">1</option>
+        <option value="3">2</option>
+        <option value="4">3</option>
+        <option value="5">4 +</option>
+    </select>
+    <br>
+    <br>
+
+    <h3>Bathrooms:</h3>
+    <select name="bathroom">
+        <option value="1">0</option>
+        <option value="2">1</option>
+        <option value="3">2</option>
+        <option value="4">3 +</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="submit" style="background-color: deepskyblue; border-radius: 10px; color: white; font-weight: bold; font-size: 14px">Search now</button>
+</form>
+</body>
+</html>
