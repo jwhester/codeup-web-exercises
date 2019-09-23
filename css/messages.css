@@ -1,17 +1,17 @@
+:root {
+    --bdr-radius: 10px;
+    --brd: 1px solid lightgray;
+    --margin-size: .5em 5em;
+    --padding-size: 5px 0px 5px 10px;
+    --box-sizing: border-box;
+
+}
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
-}
-:root {
-    --bdr-radius: 10px;
-    --brd: 1px solid lightgray;
-    --margin-size: .2em;
-    --padding-size: 5px 0px 5px 10px;
-    --box-sizing: border-box;
-
 }
 
 .message-info {
