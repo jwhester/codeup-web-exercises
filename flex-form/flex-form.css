@@ -51,11 +51,17 @@ body {
 
 /*flex solution*/
 .cover {
+    display: flex;
     /* flex container */
 }
 .flex-form {
+    display: flex;
+    margin: auto;
+
+
     /* flex items */
 }
 .destination {
+    width: 260px;
     /* bigger item */
 }
