@@ -35,11 +35,12 @@ h2, h3 {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     /* enter needed declarations here */
 }
 
 section {
-    height: 5em;
+    display: flex;
     /* enter needed declarations here */
 }
 
@@ -49,7 +50,6 @@ section:nth-of-type(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     /* enter needed declarations here */
 }
 section:nth-of-type(1) div:last-child {
@@ -61,16 +61,16 @@ section:nth-of-type(1) div:last-child {
     background: fuchsia;
     width: 3em;
     height: 1em;
+
 }
 
 .purple-box:nth-of-type(1) {
-    display: flex;
-
-
+    flex-grow: 70;
     /* enter needed declarations here */
 }
 
 .purple-box:nth-of-type(2) {
+    flex-grow: 20;
     /* enter needed declarations here */
 }
 
@@ -81,10 +81,13 @@ section:nth-of-type(1) div:last-child {
 }
 
 section:nth-of-type(3) {
+    justify-content: flex-end;
+    align-items: center;
     /* enter needed declarations here */
 }
 
 section:nth-of-type(3) h3 {
+    flex-grow: 1;
     /* enter needed declarations here */
 
 }
@@ -101,6 +104,7 @@ section:nth-of-type(3) h3 {
     height: 5em;
     width: 5em;
     background: brown;
+    flex-grow: 1;
     /* enter needed declarations here */
 }
 
@@ -109,6 +113,8 @@ section:nth-of-type(3) h3 {
 }
 
 section:nth-of-type(5) {
+    justify-content: space-evenly;
+    align-items: center;
     /* enter needed declarations here */
 }
 
@@ -121,6 +127,12 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
+
+
     /* enter needed declarations here */
 }
 
