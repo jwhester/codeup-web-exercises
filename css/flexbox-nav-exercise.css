@@ -5,7 +5,9 @@ body {
     margin: 0;
 }
 nav {
-    background: #333333;
+    background: #C1C1C1;
+    display: flex;
+    justify-content: center;
 }
 ul {
     display: flex;
@@ -16,13 +18,17 @@ ul {
 }
 nav a {
     text-decoration: none;
-    color: white;
-    font-family: Verdana;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    display: inline-block;
+    padding: 1em;
 }
 nav a:hover {
-    background: black;
+    color: blue;
 }
-h2 {
+nav h2 {
     display: flex;
-    justify-content: center;
+    font-size: 3em;
+    padding: .2em 0;
+    font-family: 'Montserrat', sans-serif;
 }
