@@ -15,12 +15,10 @@ main {
             "box2 box3 box4 box4"
             "box2 box5 box5 box6"
             "box2 box7 box8 box9"
-            "box2 box10 box3 box3";
+            "box2 box10 box10 box10";
 }
 
-div p {
-    margin: 15px;
-}
+
 .box {
     background: #FDDA00;
 }
