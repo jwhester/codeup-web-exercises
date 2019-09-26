@@ -9,6 +9,7 @@ main {
     grid-gap: .2em;
     width: 500px;
     height: 500px;
+    border: 6px solid black;
     grid-template-areas:
             "box1 box1 box5 box5 box5 box5 box5 box5"
             "box1 box1 box5 box5 box5 box5 box5 box5"
@@ -24,7 +25,6 @@ main div {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
 }
 
 #box1 {
