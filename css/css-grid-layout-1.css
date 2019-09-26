@@ -1,0 +1,44 @@
+* {box-sizing: border-box}
+body {
+    margin: 0;
+}
+main {
+    display: grid;
+    margin: 2em;
+    background: white;
+    grid-gap: .5em;
+    width: 500px;
+    height: 500px;
+    border: 6px solid white;
+    grid-template-areas:
+            "box0 box0 box0 box0 box0 box0 box0 box0"
+            "box1 box1 box2 box2 box2 box2 box2 box3"
+            "box1 box1 box2 box2 box2 box2 box2 box3"
+            "box1 box1 box2 box2 box2 box2 box2 box3"
+            "box1 box1 box2 box2 box2 box2 box2 box3"
+            "box1 box1 box2 box2 box2 box2 box2 box3"
+            "box1 box1 box4 box4 box4 box4 box4 box4";
+}
+
+div p {
+    margin: 15px;
+}
+.box {
+    background: #FCD800;
+}
+
+#header {
+    grid-area: box0
+}
+#nav    {
+    grid-area: box1
+}
+#article{
+    grid-area: box2
+}
+#ads    {
+    grid-area: box3
+}
+#footer {
+    grid-area: box4
+}
