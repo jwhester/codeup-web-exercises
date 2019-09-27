@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 main {
-    display: inline-grid;
+    display: grid;
     margin: 2em;
     background: black;
     grid-gap: .2em;
@@ -21,11 +21,6 @@ main {
             "box4 box4 box7 box7 box7 box7 box7 box7";
 }
 
-main div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #box1 {
     background: #30447B;

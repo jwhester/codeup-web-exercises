@@ -1,0 +1,165 @@
+* {box-sizing: border-box}
+body {
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+main {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+            "box1 box1 box1 box1"
+            "box2 box3 box3 box4"
+            "box2 box3 box3 box4"
+            "box2 box3 box3 box4"
+            "box2 box5 box5 box5"
+            "box2 box6 box6 box6"
+            "box2 box7 box7 box7";
+    grid-template-columns: 2fr 7fr 2fr 2fr;
+    grid-template-rows: 5% repeat(3, 8fr) 2fr 4fr 1fr;
+}
+
+
+#header {
+    grid-area: box1;
+    color: white;
+    background-color: black;
+
+}
+.header {
+    display: flex;
+    list-style-type: none;
+}
+.header li {
+    padding: 3px;
+}
+#header a {
+    color: white;
+}
+#header a:hover {
+    background-color: darkgray;
+    padding: 2px;
+}
+
+
+#nav {
+    grid-area: box2;
+    background-color: #F0F0F0;
+}
+.nav {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-left: -30px;
+
+}
+.nav li{
+    padding: 5px;
+}
+#nav a {
+    color: black;
+}
+#menu {
+    margin-left: 10px
+}
+
+
+#content {
+    grid-area: box3;
+    padding: 5px;
+}
+
+#content h2 {
+    color: #409388;
+}
+
+
+#ads {
+    grid-area: box4;
+    display: grid;
+    grid-gap: 10px;
+    padding: 5px;
+    grid-template-areas:
+    ". ."
+    "ad1 ."
+    "ad2 ."
+    "ad2 ."
+    ". ."
+    "ad3 ."
+    "ad4 ."
+    "ad4 ."
+    ". ."
+    "ad5 ."
+    "ad6 ."
+    "ad6 .";
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: 1fr repeat(11, 2fr);
+}
+#ad1{
+    grid-area: ad1;
+    border: 1px solid lightgray;
+}
+#ad2{
+    grid-area: ad2;
+    border: 1px solid lightgray;
+}
+#ad3{
+    grid-area: ad3;
+    border: 1px solid lightgray;
+}
+#ad4{
+    grid-area: ad4;
+    border: 1px solid lightgray;
+}
+#ad5{
+    grid-area: ad5;
+    border: 1px solid lightgray;
+}
+#ad6{
+    grid-area: ad6;
+    border: 1px solid lightgray;
+}
+
+
+
+#pageNav {
+    grid-area: box5;
+    margin-right: 50px;
+
+}
+.pageNav{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.pageNav li{
+    padding: 5px;
+}
+#pageNav a {
+    color: black;
+}
+#pageNav a:hover{
+    background-color: black;
+    padding: 5px;
+    color: white;
+}
+
+
+#footer {
+    grid-area: box6;
+    color: white;
+    background-color: #666666;
+}
+
+
+#poweredBy {
+    grid-area: box7;
+    color: white;
+    background-color: #333333;
+}
+
+
