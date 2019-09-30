@@ -1,0 +1,10 @@
+.store-search {
+    border-radius: 10px;
+    cursor: pointer;
+}
+.new-user {
+    border: none;
+    color: #4A4A4B;
+    background-color: #F8F9FA;
+    cursor: pointer;
+}
