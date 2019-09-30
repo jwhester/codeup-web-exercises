@@ -1,75 +1,166 @@
 * {
     box-sizing: border-box
 }
+
 body {
-    margin: 0;
-}
-.alert-info {
-    visibility: hidden;
+    display: grid;
+    height: 100%    ;
+    /*grid-template-areas:*/
+    /*"box1"*/
+    /*"box2"*/
+    /*"box3"*/
+    /*"box4"*/
+    /*"box5"*/
+    /*"box6"*/
+    /*"box7";*/
+    grid-template-rows: 5% 5% 20% 25% 20% 20% 5%;
+    grid-template-columns: 5% 90% 5%;
+    grid-gap: 5px;
 
 }
-img {
-    max-height: 100%;
-    max-width: 100%;
+#social-media-links {
+    margin-left: auto;
+    font-size: 40px;
+
 }
-.nav-links {
+a {
+    color: black;
+}
+
+.alert-info {
+    grid-area: 1 / 2 / 2 / 3 ;
+    /*grid-area: box1;*/
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 95%;
+    background-color: #CCFFFF;
+    border: 1px solid grey;
+    margin-left: 10px;
+    /*margin-top: 35px;*/
+}
+.alert-info a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+h1 {
+    grid-area: 2 / 2 / 3 / 3 ;
+    /*grid-area: box2;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-top: 70px;*/
+}
+nav {
+    grid-area: 3 / 2 / 4 / 3 ;
+    /*grid-area: box3;*/
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    list-style-type: none;
+
+}
+nav ul {
+    padding: 0;
+}
+nav li {
+    text-align: center;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-top: 10px;
+    background: lightgray;
     list-style-type: none;
 }
-@media screen and (max-width: 992px) {
+nav a {
+    display: block;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.header-img {
+    grid-area: 4 / 2 / 5 / 3 ;
+    /*grid-area: box4;*/
+
+}
+#main {
+    grid-area: 5 / 2 / 6 / 3 ;
+
+    /*grid-area: box5;*/
+}
+.sub-section {
+    grid-area: 6 / 2 / 7 / 3 ;
+    /*grid-area: box6;*/
+}
+footer {
+    grid-area: 7 / 2 / 8 / 3 ;
+    display: flex;
+    /*grid-area: box7;*/
+}
+
+@media screen and (min-width: 992px) {
     body {
         display: grid;
-        height: 100%;
-        grid-template-rows: 5% 10% 20% 20% 20% 20% 5%;
-        grid-template-columns: 5% 90% 5%;
-
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 10% 40% 40% 10%;
     }
     .alert-info {
-        grid-area: 1 / 2 / 2 / 3;
-        visibility: visible;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        width: 95%;
-        background-color: #CCFFFF;
-        border: 1px solid grey;
-        margin-left: 10px;
-        margin-top: 35px;
+        visibility: hidden;
     }
-
-    h1 {
-        grid-area: 2 / 2 / 3 / 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    h1{
+        grid-area: 1 / 1 / 2 / 2;
+        display: inline-block;
+        margin-top: auto;
+    }
+    nav{
+        grid-area: 1 / 2 / 2 / 3;
     }
     .nav-links {
-        grid-area: 3 / 2 / 4 / 3;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
+        flex-direction: row;
+        justify-content: flex-end;
     }
-    li {
-        border: 1px solid grey;
-        padding: 5px;
-        margin-top: 10px;
-        background: lightgray;
+    .nav-links li{
+        background: none;
+        border: none;
+    }
+    .header-img{
+        grid-area: 2 / 1 / 3 / 3;
+    }
+    img {
         width: 100%;
+        height: 100%;
     }
-    .header-img {
-        grid-area: 4 / 2 / 5 / 3;
-        height: 224px;
-        width: 339px;
+    #main{
+        grid-area: 3 / 1 / 4 / 2;
+        margin-top: 0;
     }
-   #main {
-       grid-area: 5 / 2 / 6 / 3;
-   }
-    .sub-section {
-        grid-area: 6 / 2 / 7 / 3;
+    #main:hover{
+        border: 5px solid rebeccapurple;
+        font-size: 25px;
     }
-    footer {
-        grid-area: 7 / 2 / 8 / 3;
+    .sub-section{
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .sub-section:hover {
+        border: 5px solid rebeccapurple;
+        font-size: 25px;
+    }
+    footer{
+        grid-area: 4 / 1 / 5 / 3;
+    }
+    a:hover {
+        color: rebeccapurple;
     }
 }
+
