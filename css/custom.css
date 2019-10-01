@@ -8,3 +8,29 @@
     background-color: #F8F9FA;
     cursor: pointer;
 }
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.jumbotron h1 {
+    text-align: center;
+    background-color: lightgray;
+    opacity: .6;
+}
+
+.btn-primary{
+    background: none;
+    color: blue;
+    border: none;
+}
+.nav-item .active {
+    border: grey;
+    color: grey;
+}
+.badge-light {
+    background: grey;
+    color: white;
+}
