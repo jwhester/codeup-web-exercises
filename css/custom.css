@@ -42,3 +42,9 @@
     color: white;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
+
+@media (min-width: 576px) {
+    #mobileBackground {
+        visibility: hidden;
+    }
+}
