@@ -10,9 +10,9 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Pizza world</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fas fa-pizza-slice"style="color:red; font-size:28px;"></i></span>
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent, #mobileBackground" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-pizza-slice"style="color:red; font-size:30px;"></i></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,7 +50,7 @@
                     <span class="badge badge-light">1</span> Size and Crust
                 </button>
                 <div class="card collapse" id="crust">
-                    <div class="card-header">
+                    <div class="card-header1">
                         Choose size and crust
                     </div>
                     <div class="card-body">
@@ -112,7 +112,7 @@
                     <span class="badge badge-light">2</span> Cheese and Sauce
                 </button>
                 <div class="card collapse" id="cheeseSauce">
-                    <div class="card-header">
+                    <div class="card-header1">
                         Choose cheese and sauce
                     </div>
                     <div class="card-body">
@@ -147,8 +147,8 @@
                             </select>
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#crust, #cheeseSauce"><i class="fas fa-pizza-slice"></i> Previous step</button>
-                            <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#toppings, #cheeseSauce">Next step <i class="fas fa-pizza-slice"></i></button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#crust, #cheeseSauce"><i class="fas fa-pizza-slice"></i> Previous step</button>
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#toppings, #cheeseSauce">Next step <i class="fas fa-pizza-slice"></i></button>
                         </div>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <span class="badge badge-light">3</span> Toppings
                 </button>
                 <div class="card collapse" id="toppings">
-                    <div class="card-header">
+                    <div class="card-header1">
                         Choose Toppings
                     </div>
                     <div class="card-body">
@@ -247,8 +247,11 @@
         </ul>
     </form>
 </div>
+<div id="mobileBackground" class="collapse show text-center d-sm-block d-md-block d-lg-none">
+    <img src="img/pizzaworld.png" class="img-fluid rounded">
+</div>
 <div id="menu" class="collapse">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide d-none d-lg-block" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/pizza.gif" class="d-block w-100" alt="...">
@@ -281,7 +284,121 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <div class="d-sm-block d-md-block d-lg-none">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Pizza
+                        </button>
+                    </h2>
+                </div>
 
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Create your own pizza, we have many options to choose from.  Pick your crust, sauce, cheese, meats, and veggies. (prices vary on selection)
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Wings
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        The best wings in the tri-county area!
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">Wings</th>
+                                <th scope="col">6 wings</th>
+                                <th scope="col">12 wings</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Buffalo</td>
+                                <td>$6.00</td>
+                                <td>$10.00</td>
+                            </tr>
+                            <tr>
+                                <td>Parmesan</td>
+                                <td>$6.00</td>
+                                <td>$10.00</td>
+                            </tr>
+                            <tr>
+                                <td>Honey</td>
+                                <td>$6.00</td>
+                                <td>$10.00</td>
+                            </tr>
+                            <tr>
+                                <td>Ranch</td>
+                                <td>$6.00</td>
+                                <td>$10.00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Beer
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">Beer</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Pizza World House Belgian 8.5% ABV</td>
+                                <td>$7.00/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Pepperoni Blond Ale 4.7% ABV</td>
+                                <td>$6.00/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Cheesiest Mexican Lager 4.3% ABV</td>
+                                <td>$5.50/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Pineapple's on a pizza?! Hard Seltzer 5.0% ABV</td>
+                                <td>$5.00/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Stuffed Crust Wheat 5.0% ABV</td>
+                                <td>$5.00/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Secret Sauce Oktoberfest 6.0% ABV</td>
+                                <td>$6.00/Pint</td>
+                            </tr>
+                            <tr>
+                                <td>Sardine and Mushrooms IPA 7.5% ABV</td>
+                                <td>$7.50/Pint</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
