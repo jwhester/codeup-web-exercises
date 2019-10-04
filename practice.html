@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/practice.css">
 </head>
 <body>
+<a onmouseleave="return changeId()"><img src="img/practice/logo.png" id="icon1"></a>
+<script>
+    function changeId() {
+        if (document.getElementById("icon1")) {
+            document.getElementById('icon1').id = 'icon2';
+        } else (document.getElementById("icon2")); {
+            document.getElementById("icon1").id = "icon1";}
+
+    }
+</script>
 
 </body>
 </html>
