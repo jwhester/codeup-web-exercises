@@ -1,0 +1,1 @@
+var password5 = password.length > 5;
