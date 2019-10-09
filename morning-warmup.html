@@ -84,6 +84,12 @@
         }
         console.log(greaterThan5());
 
+        function helloThere(string = 'Stranger') {
+            return 'Hello there ' + string + '.';
+        }
+        var promptedResponse = prompt("Input string.");
+        alert(helloThere(promptedResponse));
+
     </script>
 </body>
 </html>
