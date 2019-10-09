@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    return "Hello, " + name;
+    return "Hello, " + name + "!";
 }
 
 /**
@@ -76,8 +76,9 @@ function calculateTip(percent, owed) {
  * then display the dollar amount they should tip
  */
 var owed = parseInt(prompt('How much was your bill?'));
-var s = parseInt(prompt('What percent would you like to tip?'));
-var percent = Number(s/100).toLocaleString(undefined,{minimumFractionDigits:2});
+var tipPercent = parseInt(prompt('What percent would you like to tip?'));
+//Following line of code turns a whole number into a percentage.
+var percent = Number(tipPercent/100).toLocaleString(undefined,{minimumFractionDigits:2});
 alert("Calculated Tip: $" + calculateTip(percent, owed));
 /**
  * TODO:
