@@ -20,21 +20,23 @@ function numberPrompt() {
     var numberPrompt = confirm("Would you like to enter a number?");
     if (numberPrompt === false) {
         alert("Goodbye.");
-        if (numberPrompt === isNaN) {
-            return (alert("Not a number."));
-        }
     } else {
-        var number = parseInt(prompt("Please enter number"));
-        if (number % 2 == 0) {
-            alert(number + " is even!");
+        var number = parseFloat(prompt("Please enter number"));
+        var isNumber = !isNaN(number);
+        if (isNumber === !isNaN) {
+            alert("Not a number.");
         } else {
-            alert(number + " is odd!")
-        }
-        alert("Your number + 100 is " + (number + 100) + ".");
-        if (Math.sign(number) === 1) {
-            alert(number + " is positive.")
-        } else {
-            alert(number + " is negative.")
+            if (number % 2 == 0) {
+                alert(number + " is even!");
+            } else {
+                alert(number + " is odd!")
+            }
+            alert("Your number + 100 is " + (number + 100) + ".");
+            if (Math.sign(number) === 1) {
+                alert(number + " is positive.")
+            } else {
+                alert(number + " is negative.")
+            }
         }
     }
 }
@@ -64,10 +66,12 @@ function numberPrompt() {
  */
 function analyzeColor(color) {
     if (color === "blue"){
-        return "blue is the color of the sky";
-    } else if(color === "red"){
-        return "Strawberries are red";
-    } else {
+        return "Blue is the color of the sky.";
+    } else if(color === "red") {
+        return "Strawberries are red.";
+    }else if (color === "cyan")
+        return "That's an interesting color.";
+     else {
         return "I don't know anything about " + color + ".";
     }
 }
@@ -87,6 +91,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+console.log(randomColor);
 console.log(analyzeColor(randomColor));
 /**
  * TODO:
@@ -95,11 +100,13 @@ console.log(analyzeColor(randomColor));
 var color = randomColor
 switch (analyzeColor) {
     case "blue":
-        alert("blue is the color of the sky");
+        alert("Blue is the color of the sky");
         break;
     case "red":
         alert("Strawberries are red");
         break;
+    case "cyan":
+        alert("That's an interesting color.");
     default:
         alert("I don't know anything about " + color + ".");
 }
@@ -143,13 +150,13 @@ function calculateTotal(luckyNum, itemCost) {
             var discount = .1;
             break;
         case 2:
-            var discount = .2;
+            var discount = .25;
             break;
         case 3:
-            var discount = .3;
+            var discount = .35;
             break;
         case 4:
-            var discount = .4;
+            var discount = .50;
             break;
         case 5:
             var discount = 1;
@@ -166,5 +173,5 @@ function calculateTotal(luckyNum, itemCost) {
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-var totalBill = parseInt(prompt("What is the total bill?"));
-alert("Your lucky number was " + luckyNumber + ". Your total before the discount was " + totalBill + ", and your price after the discount is " + (calculateTotal(luckyNumber, totalBill)));
+var totalBill = parseFloat(prompt("What is the total bill?"));
+alert("Your lucky number was " + luckyNumber + ". Your total before the discount was $" + totalBill + ", and your price after the discount is $" + (calculateTotal(luckyNumber, totalBill))) + ".";
