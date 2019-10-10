@@ -20,6 +20,9 @@ function numberPrompt() {
     var numberPrompt = confirm("Would you like to enter a number?");
     if (numberPrompt === false) {
         alert("Goodbye.");
+        if (numberPrompt === isNaN) {
+            return (alert("Not a number."));
+        }
     } else {
         var number = parseInt(prompt("Please enter number"));
         if (number % 2 == 0) {
