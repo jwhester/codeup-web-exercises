@@ -99,11 +99,19 @@
         //         return false;
         //     }
         // }
-        function logArrays([a, b, c, d ,e]) {
-            return console.log([a], [b], [c], [d], [e]);
-
+        // function logArrays([a, b, c, d ,e]) {
+        //     return console.log([a], [b], [c], [d], [e]);
+        //
+        // }
+        // console.log(logArrays([1, 2, 3, 4, 5]));
+        function takesreturn(string) {
+            var string = string.length;
+            if (string > 7){
+                return true;
+            } else {return false}
         }
-        console.log(logArrays([1, 2, 3, 4, 5]));
+        console.log(takesreturn("abcdefgh"));
+    </script>
     </script>
 </body>
 </html>
