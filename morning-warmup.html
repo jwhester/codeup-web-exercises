@@ -104,13 +104,28 @@
         //
         // }
         // console.log(logArrays([1, 2, 3, 4, 5]));
-        function takesreturn(string) {
-            var string = string.length;
-            if (string > 7){
-                return true;
-            } else {return false}
+        // function takesreturn(string) {
+        //     var string = string.length;
+        //     if (string > 7){
+        //         return true;
+        //     } else {return false}
+        // }
+        // console.log(takesreturn("abcdefgh"));
+        function quotient(n, m){
+            if (typeof n === "number" && typeof m === "number"){
+                return n / m;
+            }else{
+                return false;
+            }
         }
-        console.log(takesreturn("abcdefgh"));
+        function roundDown(x) {
+            if (typeof x === "number" && !isNaN(parseFloat(x))){
+               return Math.floor(parseFloat(x));
+            } else {
+                return false;
+            }
+        }
+        console.log(roundDown(2.6));
     </script>
     </script>
 </body>
