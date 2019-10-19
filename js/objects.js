@@ -47,16 +47,7 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    // shoppers.discount = function(element) {
-    //     var amount = element.amount;
-    //     if (amount >= 200){
-    //         var discountAmount = amount * .12;
-    //         var total = amount - discountAmount;
-    //         console.log(element.name + " owed $" + amount + " before the discount, was discounted $" + discountAmount + " , and payed $" + total);
-    //     } else {
-    //         console.log(element.name + " still needs to pay $" + (200 - amount) + " before the discount can be applied.")
-    //     }
-    // };
+
     shoppers.forEach(function (element){
         var amount = element.amount;
         if (amount >= 200){
