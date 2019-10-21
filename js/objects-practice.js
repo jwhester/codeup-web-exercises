@@ -25,4 +25,6 @@ var salesReport = {title: "Monthly Sales Report",
         {employeeNumber: 12, firstName: "Betty", lastName: "Boop", salesUnit: 67}]
 };
 
-
+salesReport.employees = function(count){
+    alert(this.Array.length);
+};
