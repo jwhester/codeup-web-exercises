@@ -137,12 +137,31 @@
         // }
         //
         // countUp(12)
-        function createPersonObject(name, age){
-            return  {
-                name: name,
-                age: age
-            };
+        // function createPersonObject(name, age){
+        //     return  {
+        //         name: name,
+        //         age: age
+        //     };
+        // }
+        var count = 1;
+        while ( count <= 100 ) {
+            var fizzBuzz = '';
+            if (count % 15 === 0) {
+                fizzBuzz = count + ' FizzBuzz';
+            }
+            else if (count % 3  === 0) {
+                fizzBuzz = count + ' Fizz';
+            }
+            else if (count % 5  === 0) {
+                fizzBuzz = count + ' Buzz';
+            }
+            else {
+                fizzBuzz = null;
+            }
+            console.log(fizzBuzz || count);
+            count++;
         }
+
     </script>
 
 </body>
