@@ -100,3 +100,4 @@ function addRole(x) {
 function countLetters(str, chr) {
     return str.toUpperCase().split(chr.toUpperCase()).length-1;
 }
+
