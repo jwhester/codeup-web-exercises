@@ -217,44 +217,84 @@
     //     })
     //     return winner;
     // }
-    var students = [
+    // var students = [
+    //     {
+    //         name: "Mary",
+    //         grade: 10,
+    //         gpa: 3.7,
+    //         isRegistered: true
+    //     },
+    //     {
+    //         name: "Tim",
+    //         grade: 12,
+    //         gpa: 3.2,
+    //         isRegistered: false
+    //     },
+    //     {
+    //         name: "Ellie",
+    //         grade: 9,
+    //         gpa: 4.0,
+    //         isRegistered: false
+    //     },
+    //     {
+    //         name: "Alex",
+    //         grade: 10,
+    //         gpa: 3.9,
+    //         isRegistered: true
+    //     }
+    // ]
+    //
+    //
+    //
+    // function whosNotReg(obj) {
+    //     var bucket = [];
+    //
+    //     obj.forEach(function (student) {
+    //         if (!student.isRegistered){
+    //             bucket.push(student);
+    //         }
+    //     });
+    //     return bucket;
+    // }
+    var hamsters = [
         {
-            name: "Mary",
-            grade: 10,
-            gpa: 3.7,
-            isRegistered: true
-        },
-        {
-            name: "Tim",
-            grade: 12,
-            gpa: 3.2,
-            isRegistered: false
-        },
-        {
-            name: "Ellie",
-            grade: 9,
-            gpa: 4.0,
-            isRegistered: false
-        },
-        {
-            name: "Alex",
-            grade: 10,
-            gpa: 3.9,
-            isRegistered: true
+            name: "Hamtaro",
+            heightInMM: 86,
+            fur: ['orange', 'white'],
+            gender: "male",
+            dateOfBirth: "August 6"
+        } , {
+            name: "Bijou",
+            heightInMM: 75,
+            fur: ['white'],
+            gender: "female",
+            dateOfBirth: "July 10"
+        } , {
+            name: "Oxnard",
+            heightInMM: 100,
+            fur: ['grey', 'white'],
+            gender: "male",
+            dateOfBirth: "May 3"
+        } , {
+            name: "Boss",
+            heightInMM: 120,
+            fur: ['brown', 'white'],
+            gender: "male",
+            dateOfBirth: "Spetember 21"
+        } , {
+            name: "Snoozer",
+            heightInMM: 85,
+            fur: ['brown', 'white', "pink"],
+            gender: "male",
+            dateOfBirth: "January 14"
         }
-    ]
-
-
-
-    function whosNotReg(obj) {
+    ];
+    
+    function sortHeight(obj) {
         var bucket = [];
-
-        obj.forEach(function (student) {
-            if (!student.isRegistered){
-                bucket.push(student);
-            }
-        });
-        return bucket;
+        obj.sort(function (a,b) {
+            return b.heightInMM - a.heightInMM;
+        })
     }
     
 </script>

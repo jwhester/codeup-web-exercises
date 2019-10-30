@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<div id="wrongKey"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/confetti.js"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function () {
+        var wrongKey = new Audio('sounds/mgs.mp3');
+        var konami = new Audio('sounds/victory.mp3');
+        var correct = new Audio('sounds/coin.wav');
+
+        var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        var i = 0;
+        var kcode = function (event) {
+            if (event.key == konamiCode[i]) {
+                correct.play();
+                i++;
+            } else {
+                i = 0;
+                wrongKey.play();
+                $('#wrongKey').after("img/life.jpg");
+                setTimeout(function(){
+                    $('#wrongKey').html("");
+                }, 200);
+            }
+            if (i == (konamiCode.length)) {
+                konami.play();
+                onlyOnKonami = false;
+
+            }
+        };
+        $(document).keyup(kcode);
+
+    });
+
+
+</script>
+</body>
+</html>
