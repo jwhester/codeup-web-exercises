@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .invisible{
+            visibility: hidden;
+        }
+        .texas{
+            background: -webkit-linear-gradient(darkblue, blue, white, red, darkred);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pic{
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<button id="visibility">Click me!</button>
+<dl>
+    <dt><h1>10 FAQs about national parks: <span class="texas">TEXAS EDITION</span></h1></dt>
+    <img class="pic" src="img/texas.png" alt="">
+    <dt><h3>Big Bend</h3></dt>
+    <dd class="invisible"><p>The Rio Grande River runs through Big Bend National Park. The park is named Big Bend after the river's big bend in west Texas.</p></dd>
+    <dd class="invisible"><p>Because Big Bend National Park is so remote it is one of the least visited parks in the United States, with only about 300,000 visitors each year despite being so large in size.</p></dd>
+    <dd class="invisible"><p>Big Bend National Park is considered to be the largest Chihuahuan Desert protected region in the country.</p></dd>
+    <dd class="invisible"><p>Langford Hot Springs are located in Big Bend National Park. The temperature of the spring is approximately 105 degrees Fahrenheit.</p></dd>
+    <dd class="invisible"><p>There are more species of birds found in Big Bend National Park than in any other national park in the U.S. There are over 450 different species.</p></dd>
+    <dd class="invisible"><p>There are more than 1,200 different plant species found in Big Bend National Park. Many are not found anywhere else on the planet.</p></dd>
+    <dd class="invisible"><p>Approximately 118 miles of the Big Bend National Park border run along the international border between the United States and Mexico.</p></dd>
+    <dd class="invisible"><p>Animals found within Big Bend National Park include Mexican black bears, roadrunners, coyotes, cougars, kangaroo rats, gray foxes, black-tailed jackrabbits, and javelinas. Most animals are nocturnal (come out at night).</p></dd>
+    <dd class="invisible"><p>There are over 60 different species of cactus found in Big Bend National Park including prickly pears, pitayas, and claretcups.</p></dd>
+    <dd class="invisible"><p>There are more than 3600 species of insects found in Big Bend National Park.</p></dd>
+</dl>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+"use strict";
+$(document).ready(function() {
+    var texas = new Audio('sounds/texas.mp3');
+
+    $(document).on("keydown",function() {
+        texas.play();
+    });
+    $('#visibility').click(function(){
+        $('dd').toggleClass('invisible');
+    })
+
+});
+</script>
+</body>
+</html>
