@@ -2,11 +2,65 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        #before {
+            background-image: url("img/earthFire.gif");
+            background-size: 100% 100%;
+            font-family: 'Press Start 2P', cursive;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            margin: 0 auto;
+        }
+
+        #after {
+            display: none;
+            background-image: url("img/earthSaved.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            margin: 0 auto;
+            font-family: 'Press Start 2P', cursive;
+            color: red;
+            text-align: center;
+
+        }
+        #wrongKey {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin-top: -20%;
+        }
+
+        #otherCode{
+            display: none;
+            background-image: url("img/earthStrong.gif");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            margin: 0 auto;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+<div id="before">
+    <h1>The world is on fire, and it needs your help!</h1>
+    <h3>Enter the correct code to save it!</h3>
+</div>
 <div id="wrongKey"></div>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<div id="after">
+    <h1 class="h1">Congratulations you saved the world!</h1>
+</div>
+<div  id="otherCode">
+    <h1>Saving the world takes lots of work, but if we work together we can succeed.</h1>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/confetti.js"></script>
 
 <script>
@@ -15,29 +69,56 @@
         var wrongKey = new Audio('sounds/mgs.mp3');
         var konami = new Audio('sounds/victory.mp3');
         var correct = new Audio('sounds/coin.wav');
+        var dmx = new Audio('sounds/dmx.mp3');
+        var fire = new Audio('sounds/fire.mp3');
 
+
+        var otherCode = ['ArrowUp', "ArrowUp", "ArrowUp", "ArrowUp"];
         var konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
         var i = 0;
+        var x = 0;
+
         var kcode = function (event) {
-            if (event.key == konamiCode[i]) {
+            if (event.key == konamiCode[i] || event.key == otherCode[x]) {
                 correct.play();
                 i++;
             } else {
                 i = 0;
                 wrongKey.play();
-                $('#wrongKey').after("img/life.jpg");
-                setTimeout(function(){
+                $('#wrongKey').html('<img src="img/skeletor.gif" id="wrongKey" alt="">');
+                setTimeout(function () {
                     $('#wrongKey').html("");
-                }, 200);
+                }, 500);
             }
             if (i == (konamiCode.length)) {
                 konami.play();
+                fire.pause();
                 onlyOnKonami = false;
+                $('#before').css("display", "none");
+                $('#wrongKey').css("display", "none");
+                $('#otherCode').css("display", "none");
+                $('#after').css("display", "grid")
 
             }
+            if (event.key == otherCode[x]){
+                x++;
+            }else{
+                x = 0;
+            }
+            if (x == (otherCode.length)){
+                fire.pause();
+                dmx.play();
+                $('#before').css("display", "none");
+                $('#wrongKey').css("display", "none");
+                $('#after').css("display", "none");
+                $('#otherCode').css("display", "block");
+            }
         };
-        $(document).keyup(kcode);
+        $(document).on("keydown",function() {
+            fire.play();
+        });
 
+        $(document).keyup(kcode);
     });
 
 
