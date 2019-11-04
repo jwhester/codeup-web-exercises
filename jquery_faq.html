@@ -48,7 +48,7 @@
     <h1>Would you like to sign up for our newsletter?<span>X</span></h1>
 </div>
 
-<h2>Register for this site?</h2>
+<h2 class="register">Register for this site?</h2>
 
 <button id="visibility">Click me to learn facts about Big Bend!</button>
 <button id="yellow">Yellow Button</button>
@@ -122,7 +122,7 @@
             texas.play();
         });
         $('#visibility').click(function () {
-            $('dd, h2').toggleClass('invisible');
+            $('dd, .invisible').toggleClass('invisible');
         });
         $('#yellow').click(function () {
             $('ul').each(function () {
@@ -141,10 +141,10 @@
             $(this).parent().hide();
         });
 
-        $('h2').first().hide();
+        $('.register').hide();
 
         setTimeout(function () {
-            $('h2').first().fadeIn(2000);
+            $('.register').fadeIn(2000);
         }, 8000);
 
 
