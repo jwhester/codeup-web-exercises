@@ -19,19 +19,22 @@
             width: 200px;
             border: 1px solid black;
         }
-        .frame1{
+
+        .frame1 {
             background-color: black;
             height: 100px;
             width: 100px;
             border: 1px solid red;
         }
-        .frame2{
+
+        .frame2 {
             background-color: green;
             height: 100px;
             width: 100px;
             border: 1px solid red;
         }
-        .frame3{
+
+        .frame3 {
             background-color: purple;
             height: 100px;
             width: 100px;
@@ -44,9 +47,9 @@
 <div>
     <h1>Would you like to sign up for our newsletter?<span>X</span></h1>
 </div>
-<div>
-    <h2>Register for this site?</h2>
-</div>
+
+<h2>Register for this site?</h2>
+
 <button id="visibility">Click me to learn facts about Big Bend!</button>
 <button id="yellow">Yellow Button</button>
 <dl>
@@ -132,16 +135,17 @@
             $(this).next().children().css('font-weight', 'bold');
         });
         $('li').click(function () {
-            $(this).parent().children().first().css('color','blue')
+            $(this).parent().children().first().css('color', 'blue')
         });
         $('span').click(function () {
-            $(this).parent().parent().hide();
+            $(this).parent().hide();
         });
+
         $('h2').first().hide();
+
         setTimeout(function () {
             $('h2').first().fadeIn(2000);
-        },8000);
-
+        }, 8000);
 
 
     });
