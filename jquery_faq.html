@@ -41,6 +41,12 @@
     </style>
 </head>
 <body>
+<div>
+    <h1>Would you like to sign up for our newsletter?<span>X</span></h1>
+</div>
+<div>
+    <h2>Register for this site?</h2>
+</div>
 <button id="visibility">Click me to learn facts about Big Bend!</button>
 <button id="yellow">Yellow Button</button>
 <dl>
@@ -120,12 +126,23 @@
                 $(this).children().last().css('background-color', 'yellow')
             })
         });
+        $('ul').hide();
         $('h3').click(function () {
+            $(this).next().slideToggle();
             $(this).next().children().css('font-weight', 'bold');
         });
         $('li').click(function () {
             $(this).parent().children().first().css('color','blue')
         });
+        $('span').click(function () {
+            $(this).parent().parent().hide();
+        });
+        $('h2').first().hide();
+        setTimeout(function () {
+            $('h2').first().fadeIn(2000);
+        },8000);
+
+
 
     });
 </script>
