@@ -256,48 +256,85 @@
     //     });
     //     return bucket;
     // }
-    var hamsters = [
-        {
-            name: "Hamtaro",
-            heightInMM: 86,
-            fur: ['orange', 'white'],
-            gender: "male",
-            dateOfBirth: "August 6"
-        } , {
-            name: "Bijou",
-            heightInMM: 75,
-            fur: ['white'],
-            gender: "female",
-            dateOfBirth: "July 10"
-        } , {
-            name: "Oxnard",
-            heightInMM: 100,
-            fur: ['grey', 'white'],
-            gender: "male",
-            dateOfBirth: "May 3"
-        } , {
-            name: "Boss",
-            heightInMM: 120,
-            fur: ['brown', 'white'],
-            gender: "male",
-            dateOfBirth: "Spetember 21"
-        } , {
-            name: "Snoozer",
-            heightInMM: 85,
-            fur: ['brown', 'white', "pink"],
-            gender: "male",
-            dateOfBirth: "January 14"
+    // var hamsters = [
+    //     {
+    //         name: "Hamtaro",
+    //         heightInMM: 86,
+    //         fur: ['orange', 'white'],
+    //         gender: "male",
+    //         dateOfBirth: "August 6"
+    //     } , {
+    //         name: "Bijou",
+    //         heightInMM: 75,
+    //         fur: ['white'],
+    //         gender: "female",
+    //         dateOfBirth: "July 10"
+    //     } , {
+    //         name: "Oxnard",
+    //         heightInMM: 100,
+    //         fur: ['grey', 'white'],
+    //         gender: "male",
+    //         dateOfBirth: "May 3"
+    //     } , {
+    //         name: "Boss",
+    //         heightInMM: 120,
+    //         fur: ['brown', 'white'],
+    //         gender: "male",
+    //         dateOfBirth: "Spetember 21"
+    //     } , {
+    //         name: "Snoozer",
+    //         heightInMM: 85,
+    //         fur: ['brown', 'white', "pink"],
+    //         gender: "male",
+    //         dateOfBirth: "January 14"
+    //     }
+    // ];
+    //
+    // function sortHeight(obj) {
+    //     var bucket = [];
+    //     obj.sort(function (a,b) {
+    //         return b.heightInMM - a.heightInMM;
+    //     })
+    // }
+    function numToStr(num) {
+        switch (num) {
+            case 1:
+                console.log('one');
+            break;
+            case 2:
+                console.log('two');
+            break;
+            case 3:
+                console.log('three');
+                break;
+            case 4:
+                console.log('four');
+                break;
+            case 5:
+                console.log('five');
+                break;
+            case 6:
+                console.log('six');
+                break;
+            case 7:
+                console.log('seven');
+                break;
+            case 8:
+                console.log('eight');
+                break;
+            case 9:
+                console.log('nine');
+                break;
+            case 10:
+                console.log('ten');
+                break;
         }
-    ];
-    
-    function sortHeight(obj) {
-        var bucket = [];
-        obj.sort(function (a,b) {
-            return b.heightInMM - a.heightInMM;
-        })
     }
-    
-</script>
 
+    console.log(numToStr(8));
+</script>
+<!--<p>Facebook</p>-->
+<!--<p>Google</p>-->
+<!--<p>VRV</p>-->
 </body>
 </html>
