@@ -299,39 +299,32 @@
     function numToStr(num) {
         switch (num) {
             case 1:
-                console.log('one');
-            break;
+                return 'one';
             case 2:
-                console.log('two');
-            break;
+                return 'two';
             case 3:
-                console.log('three');
-                break;
+                return 'three';
             case 4:
-                console.log('four');
-                break;
+                return 'four';
             case 5:
-                console.log('five');
-                break;
+                return 'five';
             case 6:
-                console.log('six');
-                break;
+                return 'six';
             case 7:
-                console.log('seven');
-                break;
+                return 'seven';
             case 8:
-                console.log('eight');
-                break;
+                return 'eight';
             case 9:
-                console.log('nine');
-                break;
+                return 'nine';
             case 10:
-                console.log('ten');
-                break;
+                return 'ten';
+            default:
+                return false;
         }
     }
+    var randoNum = Math.floor(Math.random()*10)+1;
 
-    console.log(numToStr(8));
+    console.log(numToStr(randoNum));
 </script>
 <!--<p>Facebook</p>-->
 <!--<p>Google</p>-->
