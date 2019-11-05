@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="twitterboot/bootstrap.css">
+    <link rel="stylesheet" href="twitterboot/bootstrap-responsive.css">
+    <style>
+        #refresh{
+            background-color: #0088CC;
+            color: white;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        th{
+            border: 1px solid black;
+            text-align: center;
+            background-color: grey;
+        }
+        tr, .data{
+            border: 1px solid black;
+            text-align: center;
+        }
+        h1{
+            background-color: #0088CC;
+            color: white;
+        }
+        .cat{
+            color: red;
+        }
+        .price{
+            color: green;
+        }
+        .title{
+            color: blue;
+        }
+        body{
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+<button id="refresh">Refresh</button>
+<table id="products">
+    <thead>
+        <tr class="row">
+            <th class="span3">Title</th>
+            <th class="span3">Quantity</th>
+            <th class="span3">Price</th>
+            <th class="span3">Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="twitterboot/bootstrap.js"></script>
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+    var inventory = $.get('data/inventory.json');
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    function genInv(){
+        inventory.done(function (data) {
+            console.log(data);
+            $.each(data, function (index, inv) {
+                console.log(inv.title);
+                var content = "<tr class='row'>";
+                content += "<td class=\"span3 data title\">";
+                content += inv.title;
+                content += "</td>";
+                content += "<td class=\"span3 data\">";
+                content += inv.quantity;
+                content += "</td>";
+                content += "<td class=\"span3 data price\">";
+                content += "$" + inv.price + ".00";
+                content += "</td>";
+                content += "<td class=\"span3 data cat\">";
+                content += inv.categories;
+                content += "</td>";
+                content += "</tr>";
+                $('#insertProducts').append(content);
+            });
+        }).fail(function () {
+            console.log("Wrong file path.");
+        });
+    }
+    genInv();
+    $('#refresh').click(function () {
+        $('#insertProducts').html('');
+        genInv();
+    })
+})();
+</script>
+
+</body>
+</html>
