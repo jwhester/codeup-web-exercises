@@ -296,35 +296,44 @@
     //         return b.heightInMM - a.heightInMM;
     //     })
     // }
-    function numToStr(num) {
-        switch (num) {
-            case 1:
-                return 'one';
-            case 2:
-                return 'two';
-            case 3:
-                return 'three';
-            case 4:
-                return 'four';
-            case 5:
-                return 'five';
-            case 6:
-                return 'six';
-            case 7:
-                return 'seven';
-            case 8:
-                return 'eight';
-            case 9:
-                return 'nine';
-            case 10:
-                return 'ten';
-            default:
-                return false;
+    // function numToStr(num) {
+    //     switch (num) {
+    //         case 1:
+    //             return 'one';
+    //         case 2:
+    //             return 'two';
+    //         case 3:
+    //             return 'three';
+    //         case 4:
+    //             return 'four';
+    //         case 5:
+    //             return 'five';
+    //         case 6:
+    //             return 'six';
+    //         case 7:
+    //             return 'seven';
+    //         case 8:
+    //             return 'eight';
+    //         case 9:
+    //             return 'nine';
+    //         case 10:
+    //             return 'ten';
+    //         default:
+    //             return false;
+    //     }
+    // }
+    // var randoNum = Math.floor(Math.random()*10)+1;
+    //
+    // console.log(numToStr(randoNum));
+    var thanks = {
+        gratitude: "Thank you"
+    };
+    function welcome(obj) {
+        if (obj.gratitude === "Thank you"){
+            return "You're Welcome!"
         }
-    }
-    var randoNum = Math.floor(Math.random()*10)+1;
 
-    console.log(numToStr(randoNum));
+    }
 </script>
 <!--<p>Facebook</p>-->
 <!--<p>Google</p>-->

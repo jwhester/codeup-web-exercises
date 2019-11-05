@@ -9,7 +9,7 @@
         .header{
             background-color: #1DA1F2;
             display: grid;
-            grid-template-columns: 10% 60% 30%;
+            grid-template-columns: 30% 40% 30%;
             grid-template-rows: 50% 50%;
             height: 10vh;
             width: 100%;
@@ -28,10 +28,20 @@
             height: 10vh;
             float: right;
             z-index: 1;
-
+        }
+        .nav{
+            grid-area: 2/ 2/ 3/ 3;
         }
         .title{
-            border: 1px solid grey;
+            /*border: 1px solid darkgray;*/
+        }
+        .content{
+            padding: 2px;
+            border-radius: 10px;
+            border: 2px solid black;
+            height: 200px;
+            width: 500px;
+            box-shadow: 2px 2px 2px black;
         }
     </style>
 </head>
@@ -42,6 +52,8 @@
     <img src="img/faketwitter.png" alt="It's a bird." class="bird">
 </div>
 <hr style="padding: 0; margin: 0; border: 1px solid black">
+<br>
+
 <div id="posts"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="twitterboot/bootstrap.js"></script>
@@ -76,6 +88,7 @@
             });
         }
         genPost();
+
         // $('#refresh').click(function () {
         //     $('#insertProducts').html('');
         //     genInv();
