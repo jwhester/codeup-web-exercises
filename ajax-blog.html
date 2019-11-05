@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="twitterboot/bootstrap.css">
     <link rel="stylesheet" href="twitterboot/bootstrap-responsive.css">
     <style>
-        .header{
+        .header {
             background-color: #1DA1F2;
             display: grid;
             grid-template-columns: 30% 40% 30%;
@@ -14,33 +14,50 @@
             height: 10vh;
             width: 100%;
         }
-        .the{
-              font-size: 40px;
-              grid-area: 1/ 1/ 2/ 2;
-          }
-        .twitter{
+
+        .the {
+            font-size: 40px;
+            grid-area: 1/ 1/ 2/ 2;
+        }
+
+        .twitter {
             font-size: 40px;
             grid-area: 2/ 1/ 3/ 2;
         }
-        .bird{
+
+        .bird {
             grid-area: 1/ 3/ 3/ 4;
             margin-left: 70%;
             height: 10vh;
             float: right;
             z-index: 1;
         }
-        .nav{
+
+        .nav {
             grid-area: 2/ 2/ 3/ 3;
         }
-        .title{
+
+        .title {
             /*border: 1px solid darkgray;*/
         }
-        .content{
+
+        .content {
             padding: 2px;
             border-radius: 10px;
             border: 2px solid black;
-            height: 200px;
+            height: 250px;
             width: 500px;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        .post {
+            margin-left: 30%;
+        }
+
+        #subPost {
+            background-color: #0E90D2;
+            color: white;
+            border-radius: 10px;
             box-shadow: 2px 2px 2px black;
         }
     </style>
@@ -53,46 +70,87 @@
 </div>
 <hr style="padding: 0; margin: 0; border: 1px solid black">
 <br>
-
-<div id="posts"></div>
+<div style="display: flex">
+<h3>New Twit:</h3>
+<input type="text" id="postStatus" placeholder="1000 characters or less.">
+<button id="subPost">Submit</button>
+</div>
+<div id="newpost">
+    <h2 class="title post">
+        New Kicks!
+    </h2>
+    <h6 class=" date post">
+        NOVEMBER 5, 2019
+    </h6>
+    <img src="img/dadshoe.jpeg" alt="" class="content post">
+    <h6 class=" cat post">
+        Lawn Mowing Season
+    </h6>
+</div>
+<div id="posts">
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="twitterboot/bootstrap.js"></script>
 <script>
-    (function() {
+    (function () {
         "use strict";
+        var monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
         var blog = $.get('data/blog.json');
+        var d = new Date();
 
-        function genPost(){
+        var month = monthNames[d.getMonth()];
+        var day = d.getDate();
+
+        var output = (month<10 ? '0' : '') + month + ' ' +(day<10 ? '0' : '') + day + ', ' + d.getFullYear();
+
+        var rando = ["Another Blog Post", "New Post", "My Next Blog Post", "New Twitt"];
+        var randoOutput = rando[Math.floor((Math.random() * 4))];
+
+        function genPost() {
             blog.done(function (data) {
                 console.log(data);
                 $.each(data, function (index, blog) {
                     console.log(blog.title);
-                    var content = "<div class='row'>";
-                    content += "<h2 class=\"span3 title\">";
+                    var content = "<div class='post'>";
+                    content += "<h2 class=\" title\">";
                     content += blog.title;
                     content += "</h2>";
-                    content += "<p class=\"span3 content\">";
-                    content += blog.content;
-                    content += "</p>";
-                    content += "<h6 class=\"span3 date\">";
+                    content += "<h6 class=\" date\">";
                     content += blog.date;
                     content += "</h6>";
-                    content += "<h6 class=\"span3 cat\">";
+                    content += "<p class=\" content\">";
+                    content += blog.content;
+                    content += "</p>";
+                    content += "<h6 class=\" cat\">";
                     content += blog.categories;
                     content += "</h6>";
+                    content += "<br>";
                     content += "</div>";
-                    $('#posts').append(content);
+                    $('#posts').prepend(content);
                 });
             }).fail(function () {
                 console.log("Wrong file path.");
             });
         }
+
         genPost();
 
-        // $('#refresh').click(function () {
-        //     $('#insertProducts').html('');
-        //     genInv();
-        // })
+        $("#subPost").click(function () {
+            var rando = ["Another Blog Post", "New Post", "My Next Blog Post", "New Twitt"];
+            var randoOutput = rando[Math.floor((Math.random() * 4))];
+            var random = ["#dadlife", "#yolo", "#dadjokes", "#Unpasteurized"];
+            var randocat = random[Math.floor((Math.random() * 4))];
+            var x = $('#postStatus').val();
+            $('#newpost').prepend("<h6 class=\" cat post\">" + randocat + "</h6>");
+            $('#newpost').prepend("<p class=\" content post\">" + x + "</p>");
+            $('#newpost').prepend("<h6 class=\" date post\">" + output + "</h6>")
+            $('#newpost').prepend("<h2 class=\" title post\">" + randoOutput + "</h2>");
+        })
+
+
+
     })();
 </script>
 </body>
