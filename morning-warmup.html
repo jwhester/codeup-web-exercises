@@ -325,14 +325,21 @@
     // var randoNum = Math.floor(Math.random()*10)+1;
     //
     // console.log(numToStr(randoNum));
-    var thanks = {
-        gratitude: "Thank you"
-    };
-    function welcome(obj) {
-        if (obj.gratitude === "Thank you"){
-            return "You're Welcome!"
+    // var thanks = {
+    //     gratitude: "Thank you"
+    // };
+    // function welcome(obj) {
+    //     if (obj.gratitude === "Thank you"){
+    //         return "You're Welcome!"
+    //     }
+    //
+    // }
+    function randomBoolean() {
+        x = Math.floor((Math.random()*2));
+        switch (x) {
+            case 0: return true;
+            case 1: return false;
         }
-
     }
 </script>
 <!--<p>Facebook</p>-->

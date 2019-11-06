@@ -97,13 +97,13 @@
         var monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
-        var blog = $.get('data/blog.json');
         var d = new Date();
 
         var month = monthNames[d.getMonth()];
         var day = d.getDate();
 
         var output = (month<10 ? '0' : '') + month + ' ' +(day<10 ? '0' : '') + day + ', ' + d.getFullYear();
+        var blog = $.get('data/blog.json');
 
         var rando = ["Another Blog Post", "New Post", "My Next Blog Post", "New Twitt"];
         var randoOutput = rando[Math.floor((Math.random() * 4))];
