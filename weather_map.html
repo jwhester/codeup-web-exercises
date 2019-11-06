@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Project</title>
+    <link rel="stylesheet" href="css/weather.css">
+</head>
+<body>
+<div id="card"></div>
+<script src="js/keys.js"></script>
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+<!--<script src="js/mapbox_maps_api.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        "use strict";
+        var today = new Date(Date.now());
+        var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + "/29.4241,-98.4936");
+        console.log(weather.done());
+
+        function genWeather() {
+            weather.done(function (data) {
+                var content = "<h1 class='temp'>";
+                content += Math.round(data.currently.temperature) + "F";
+                content += "</h1>";
+                content += "<img class='icon'>";
+                content += "<h3 class='summary'>";
+                content += data.currently.summary;
+                content += "</h3>";
+                content += "<h3 class='humidity'>";
+                content += "Humidity: " + Math.round(data.currently.humidity * 100) + "%";
+                content += "</h3>";
+                content += "<h3 class='windSpeed'>";
+                content += "Wind Speed: " + Math.round(data.currently.windSpeed) + " MPH" ;
+                content += "</h3>";
+                content += "<h3 class='pressure'>";
+                content += "Pressure: " + data.currently.pressure;
+                content += "</h3>";
+
+                $('#card').append(content);
+                var icons = [
+                    {
+                        summary: "clear-day",
+                        image: 'icons/clearDay.png'
+                    },
+                    {
+                        summary: "clear-night",
+                        image: 'icons/clearNight.png'
+                    },
+                    {
+                        summary: "rain",
+                        image: 'icons/rain.png'
+                    },
+                    {
+                        summary: "snow",
+                        image: 'icons/snow.png'
+                    },
+                    {
+                        summary: "sleet",
+                        image: 'icons/sleet.png'
+                    },
+                    {
+                        summary: "wind",
+                        image: 'icons/wind.png'
+                    },
+                    {
+                        summary: "fog",
+                        image: 'icons/fog.png'
+                    },
+                    {
+                        summary: "cloudy",
+                        image: 'icons/cloudy.png'
+                    },
+                    {
+                        summary: "partly-cloudy-day",
+                        image: 'icons/partlyCloudyDay.png'
+                    },
+                    {
+                        summary: "partly-cloudy-night",
+                        image: 'icons/partlyCloudyNight.png'
+                    },
+
+                ];
+                var backgrounds = [
+                    {
+                        summary: "clear-day",
+                        image: "url('icons/clearDay.gif')"
+                    },
+                    {
+                        summary: "clear-night",
+                        image: "url('icons/clearNight.gif')"
+                    },
+                    {
+                        summary: "rain",
+                        image: "url('icons/rain.gif')"
+                    },
+                    {
+                        summary: "snow",
+                        image: "url('icons/snow.gif')"
+                    },
+                    {
+                        summary: "sleet",
+                        image: "url('icons/snow.gif')"
+                    },
+                    {
+                        summary: "wind",
+                        image: "url('icons/wind.gif')"
+                    },
+                    {
+                        summary: "fog",
+                        image: "url('icons/fog.gif')"
+                    },
+                    {
+                        summary: "cloudy",
+                        image: "url('icons/cloudy.gif')"
+                    },
+                    {
+                        summary: "partly-cloudy-day",
+                        image: "url('icons/partlyCloudyDay.gif')"
+                    },
+                    {
+                        summary: "partly-cloudy-night",
+                        image: "url('icons/partlyCloudyNight.gif')"
+                    },
+
+                ];
+                icons.forEach(function (type) {
+                    if(data.currently.icon === type.summary){
+                        $('.icon').attr('src',type.image);
+                    }
+                });
+                backgrounds.forEach(function (type) {
+                    if(data.currently.icon === type.summary){
+                        $('#card').css('background-image',type.image);
+                    }
+                });
+            });
+            weather.fail(function () {
+                console.log("try again")
+            })
+        }
+
+        genWeather();
+
+
+    });
+</script>
+</body>
+</html>
