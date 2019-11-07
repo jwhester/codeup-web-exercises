@@ -6,6 +6,7 @@ body {
   font-weight: 700;
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  background-color: #02A1EC;
 }
 * {
   box-sizing: border-box;
@@ -14,7 +15,7 @@ div {
   margin: 0 auto;
   display: inline-block;
   text-align: center;
-  padding: .4em 1.3em;
+  //padding: .4em 1.3em;
 }
 hr {
   height: 10px;
@@ -115,36 +116,107 @@ hr {
                   (-2*$width) 0 0 2*$width $color;
   margin: 5*$width auto;
 }
+
+#head{
+  background-image: url("../icons/background.gif");
+  background-size: 110% 100%;
+  background-repeat: no-repeat;
+  height: 230px;
+  width: 100%;
+  @include other( 2px, white, white );
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
 #cards{
   display: flex;
+  padding: 20px;
 }
 #card {
-  @include other( 4px, black, black );
+  @include other( 2px, white, white );
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 100% 100%;
   width: 400px;
-  height: 555px;
+  height: 550px;
+  overflow: scroll;
   text-shadow: white 2px 2px 2px;
 }
 #card2 {
-  @include other( 4px, black, black );
+  @include other( 2px, white, white );
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 100% 100%;
   width: 400px;
-  height: 555px;
+  height: 550px;
   overflow: scroll;
   text-shadow: white 2px 2px 2px;
 }
 #card3 {
-  @include other( 4px, black, black );
+  @include other( 2px, white, white );
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-size: 100% 100%;
   width: 400px;
-  height: 555px;
+  height: 550px;
   overflow: scroll;
   text-shadow: white 2px 2px 2px;
 }
 #map {
-  width: 80vw;
+  @include other( 2px, white, white );
+  width: 80%;
   height: 700px;
+}
+
+.mapboxgl-marker {
+  position: relative;
+}
+.search-form {
+  --searchButtonWidth: 100px;
+  height: 80px;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.search-input {
+  border: 0;
+  margin: 0;
+  padding: 0.5rem calc(var(--searchButtonWidth) + 0.5rem) 0.5rem 0.5rem;
+  border-radius: 8px;
+  width: 100%;
+  background: #ddd;
+  -webkit-appearance: none;
+  font: 20px "Press start 2P";}
+.search-input:focus {
+  outline: 0;
+  background: white;
+}
+.search-input:not(:placeholder-shown) ~ .search-button {
+  transform: translateX(calc(-1 * var(--searchButtonWidth)));
+}
+
+.search-button {
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: var(--searchButtonWidth);
+  transition: 0.2s;
+  background: #fd4581;
+  color: black;
+  font: 13px "Press start 2P";
+  height: 50%;
+
+}
+.search-button:focus {
+  outline: 0;
+  background: #222;
+}
+
+.screen-reader-text {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }

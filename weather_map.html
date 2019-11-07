@@ -3,58 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
+    <link rel='stylesheet'
+          href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css'
+          type='text/css'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" href="css/weather.css">
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+
 </head>
 <body>
-<div id="cards">
-<div id="card"></div>
-<div id="card2"></div>
-<div id="card3"></div>
+<div id="head">
+    <h1>Lofi</h1>
+    <h1>Weather</h1>
 </div>
+<div id="cards">
+    <div id="card"></div>
+    <div id="card2"></div>
+    <div id="card3"></div>
+</div>
+<form onsubmit="event.preventDefault();" class="search-form">
+    <label for="search" class="screen-reader-text">Search</label>
+    <input id="search"
+           type="search" class="search-input" placeholder="City, State or Zip Code">
+    <button class="search-button">Search</button>
+</form>
 <div id='map'></div>
-<script src="js/keys.js"></script>
-<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
-<script src="js/mapbox_maps_api.js"></script>
+<pre id='coordinates' class='coordinates'></pre>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     $(document).ready(function () {
         "use strict";
+
+        var lofi = new Audio('sounds/lofi.mp3');
+        $(document).click(function () {
+            lofi.play();
+        });
+        var arr = [-98.4936, 29.4241];
+        var ll = mapboxgl.LngLat.convert(arr);
+
+        mapboxgl.accessToken = mapboxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v8',
+            center: ll,
+            zoom: 10
+        });
+
+
+        var marker = new mapboxgl.Marker({
+            draggable: true,
+            color: "limegreen"
+        })
+            .setLngLat(ll)
+            .addTo(map);
+
+
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            $('#card').html("");
+            genWeatherToday();
+            $('#card2').html("");
+            genWeatherTomorrow();
+            $('#card3').html("");
+            genWeatherDayAfterTomorrow();
+        }
+
+        marker.on('dragend', onDragEnd);
+
+
         var monthNames = ["January", "February", "March", "April", "May", "June",
             "July", "August", "September", "October", "November", "December"
         ];
         var d = new Date();
         var month = monthNames[d.getMonth()];
         var day = d.getDate();
-        var tomorrowSet = d.getDate()+1;
-        var dayAfterTomorrowSet = d.getDate()+2;
-        var today = (month<10 ? '0' : '') + month + ' ' +(day<10 ? '0' : '') + day + ', ' + d.getFullYear();
-        var tomorrow = (month<10 ? '0' : '') + month + ' ' +(tomorrowSet<10 ? '0' : '') + tomorrowSet + ', ' + d.getFullYear();
-        var dayAfterTomorrow = (month<10 ? '0' : '') + month + ' ' +(dayAfterTomorrowSet<10 ? '0' : '') + dayAfterTomorrowSet + ', ' + d.getFullYear();
+        var tomorrowSet = d.getDate() + 1;
+        var dayAfterTomorrowSet = d.getDate() + 2;
+        var today = (month < 10 ? '0' : '') + month + ' ' + (day < 10 ? '0' : '') + day + ', ' + d.getFullYear();
+        var tomorrow = (month < 10 ? '0' : '') + month + ' ' + (tomorrowSet < 10 ? '0' : '') + tomorrowSet + ', ' + d.getFullYear();
+        var dayAfterTomorrow = (month < 10 ? '0' : '') + month + ' ' + (dayAfterTomorrowSet < 10 ? '0' : '') + dayAfterTomorrowSet + ', ' + d.getFullYear();
 
+        $(".search-button").click(function () {
+            var input = $("#search").val();
+            geocode(input, mapboxToken).then(function (result) {
+                console.log(result);
+                map.setCenter(result);
+                map.setZoom(12);
+                marker.setLngLat(result);
+                $('#card').html("");
+                genWeatherToday();
+                $('#card2').html("");
+                genWeatherTomorrow();
+                $('#card3').html("");
+                genWeatherDayAfterTomorrow();
 
-
-        var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + "/29.4241,-98.4936");
-        console.log(weather.done());
+            });
+        });
 
         function genWeatherToday() {
+
+            marker.on('dragend', onDragEnd);
+            $('#card').html("");
+            var lngLat = marker.getLngLat();
+            var cord = "/" + lngLat.lat + "," + lngLat.lng;
+            var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + cord);
             weather.done(function (data) {
+                console.log(data);
                 var content = "<h6>";
                 content += today;
                 content += "</h6>";
                 content += "<h3 class='temp'>";
-                content += Math.round(data.currently.temperature) + "F";
+                content += Math.round(data.currently.temperature) + "°F";
                 content += "</h3>";
                 content += "<img class='icon1'>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.currently.humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
-                content += "Wind Speed: " + Math.round(data.currently.windSpeed) + " MPH" ;
+                content += "Wind Speed: " + Math.round(data.currently.windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='pressure'>";
-                content += "Pressure: " + data.currently.pressure;
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.currently.precipProbability;
                 content += "</h5>";
 
                 $('#card').append(content);
@@ -145,13 +216,13 @@
 
                 ];
                 icons.forEach(function (type) {
-                    if(data.currently.icon === type.summary){
-                        $('.icon1').attr('src',type.image);
+                    if (data.currently.icon === type.summary) {
+                        $('.icon1').attr('src', type.image);
                     }
                 });
                 backgrounds.forEach(function (type) {
-                    if(data.currently.icon === type.summary){
-                        $('#card').css('background-image',type.image);
+                    if (data.currently.icon === type.summary) {
+                        $('#card').css('background-image', type.image);
                     }
                 });
             });
@@ -161,29 +232,28 @@
         }
 
 
-
-
-
         function genWeatherTomorrow() {
-            weather.done(function (data) {
+            marker.on('dragend', onDragEnd);
+            $('#card').html("");
+            var lngLat = marker.getLngLat();
+            var cord = "/" + lngLat.lat + "," + lngLat.lng;
+            var tomWeather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + cord);
+            tomWeather.done(function (data) {
                 var content = "<h6>";
                 content += tomorrow;
                 content += "</h6>";
                 content += "<h3 class='temp'>";
-                content += "Low: " + Math.round(data.daily.data[1].temperatureMin) + "F";
-                content += "</h3>";
-                content += "<h3 class='temp'>";
-                content += "High: " + Math.round(data.daily.data[1].temperatureMax) + "F";
+                content += Math.round(data.daily.data[1].temperatureMax) + "°F" + "/" + Math.round(data.daily.data[1].temperatureMin) + "°F";
                 content += "</h3>";
                 content += "<img class='icon2'>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.daily.data[1].humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
-                content += "Wind Speed: " + Math.round(data.daily.data[1].windSpeed) + " MPH" ;
+                content += "Wind Speed: " + Math.round(data.daily.data[1].windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='pressure'>";
-                content += "Pressure: " + data.daily.data[1].pressure;
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.daily.data[1].precipProbability;
                 content += "</h5>";
 
                 $('#card2').append(content);
@@ -274,50 +344,43 @@
 
                 ];
                 icons.forEach(function (type) {
-                    if(data.daily.data[1].icon === type.summary){
-                        $('.icon2').attr('src',type.image);
+                    if (data.daily.data[1].icon === type.summary) {
+                        $('.icon2').attr('src', type.image);
                     }
                 });
                 backgrounds.forEach(function (type) {
-                    if(data.daily.data[1].icon === type.summary){
-                        $('#card2').css('background-image',type.image);
+                    if (data.daily.data[1].icon === type.summary) {
+                        $('#card2').css('background-image', type.image);
                     }
                 });
             });
-            weather.fail(function () {
+            tomWeather.fail(function () {
                 console.log("try again")
             })
         }
 
 
-
-
-
-
-
-
-
-
         function genWeatherDayAfterTomorrow() {
-            weather.done(function (data) {
+            marker.on('dragend', onDragEnd);
+            var lngLat = marker.getLngLat();
+            var cord = "/" + lngLat.lat + "," + lngLat.lng;
+            var aftTomWeather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + cord);
+            aftTomWeather.done(function (data) {
                 var content = "<h5>";
                 content += dayAfterTomorrow;
                 content += "</h5>";
                 content += "<h3 class='temp'>";
-                content += "Low: " + Math.round(data.daily.data[2].temperatureMin) + "F";
-                content += "</h3>";
-                content += "<h3 class='temp'>";
-                content += "High: " + Math.round(data.daily.data[2].temperatureMax) + "F";
+                content += Math.round(data.daily.data[2].temperatureMax) + "°F" + "/" + Math.round(data.daily.data[2].temperatureMin) + "°F";
                 content += "</h3>";
                 content += "<img class='icon3'>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.daily.data[2].humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
-                content += "Wind Speed: " + Math.round(data.daily.data[2].windSpeed) + " MPH" ;
+                content += "Wind Speed: " + Math.round(data.daily.data[2].windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='pressure'>";
-                content += "Pressure: " + data.daily.data[2].pressure;
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.daily.data[2].precipProbability * 100 + "%";
                 content += "</h5>";
 
                 $('#card3').append(content);
@@ -408,17 +471,17 @@
 
                 ];
                 icons.forEach(function (type) {
-                    if(data.daily.data[2].icon === type.summary){
-                        $('.icon3').attr('src',type.image);
+                    if (data.daily.data[2].icon === type.summary) {
+                        $('.icon3').attr('src', type.image);
                     }
                 });
                 backgrounds.forEach(function (type) {
-                    if(data.daily.data[2].icon === type.summary){
-                        $('#card3').css('background-image',type.image);
+                    if (data.daily.data[2].icon === type.summary) {
+                        $('#card3').css('background-image', type.image);
                     }
                 });
             });
-            weather.fail(function () {
+            aftTomWeather.fail(function () {
                 console.log("try again")
             })
         }
