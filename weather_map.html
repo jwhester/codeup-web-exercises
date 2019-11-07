@@ -13,8 +13,9 @@
 </head>
 <body>
 <div id="head">
-    <h1>Lofi</h1>
-    <h1>Weather</h1>
+    <h1 id="first">Lofi</h1>
+    <h1 id="second">Weather</h1>
+    <h5 id="local"></h5>
 </div>
 <div id="cards">
     <div id="card"></div>
@@ -46,7 +47,7 @@
         mapboxgl.accessToken = mapboxToken;
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v8',
+            style: 'mapbox://styles/jwhester/ck2ozzisi00l01dlned23n2vp',
             center: ll,
             zoom: 10
         });
@@ -54,7 +55,7 @@
 
         var marker = new mapboxgl.Marker({
             draggable: true,
-            color: "limegreen"
+            color: "#9e7e44"
         })
             .setLngLat(ll)
             .addTo(map);
@@ -109,6 +110,9 @@
             var lngLat = marker.getLngLat();
             var cord = "/" + lngLat.lat + "," + lngLat.lng;
             var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSky + cord);
+            var locale = reverseGeocode({lat: lngLat.lat, lng: lngLat.lng}, mapboxToken).then(function(result){
+                $("#local").html(result);
+            });
             weather.done(function (data) {
                 console.log(data);
                 var content = "<h6>";
@@ -118,15 +122,19 @@
                 content += Math.round(data.currently.temperature) + "°F";
                 content += "</h3>";
                 content += "<img class='icon1'>";
+                content += "<h6 class='summary'>";
+                content += "Summary: " + data.currently.summary;
+                content += "</h6>";
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.currently.precipProbability * 100 + "%";
+                content += "</h5>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.currently.humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
                 content += "Wind Speed: " + Math.round(data.currently.windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='rainChance'>";
-                content += "Chance of rain: " + data.currently.precipProbability;
-                content += "</h5>";
+
 
                 $('#card').append(content);
                 var icons = [
@@ -246,15 +254,19 @@
                 content += Math.round(data.daily.data[1].temperatureMax) + "°F" + "/" + Math.round(data.daily.data[1].temperatureMin) + "°F";
                 content += "</h3>";
                 content += "<img class='icon2'>";
+                content += "<h6 class='summary'>";
+                content += "Summary: " + data.daily.data[1].summary;
+                content += "</h6>";
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.daily.data[1].precipProbability *100 + "%";
+                content += "</h5>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.daily.data[1].humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
                 content += "Wind Speed: " + Math.round(data.daily.data[1].windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='rainChance'>";
-                content += "Chance of rain: " + data.daily.data[1].precipProbability;
-                content += "</h5>";
+
 
                 $('#card2').append(content);
                 var icons = [
@@ -373,15 +385,19 @@
                 content += Math.round(data.daily.data[2].temperatureMax) + "°F" + "/" + Math.round(data.daily.data[2].temperatureMin) + "°F";
                 content += "</h3>";
                 content += "<img class='icon3'>";
+                content += "<h6 class='summary'>";
+                content += "Summary: " + data.daily.data[2].summary;
+                content += "</h6>";
+                content += "<h5 class='rainChance'>";
+                content += "Chance of rain: " + data.daily.data[2].precipProbability * 100 + "%";
+                content += "</h5>";
                 content += "<h5 class='humidity'>";
                 content += "Humidity: " + Math.round(data.daily.data[2].humidity * 100) + "%";
                 content += "</h5>";
                 content += "<h5 class='windSpeed'>";
                 content += "Wind Speed: " + Math.round(data.daily.data[2].windSpeed) + " MPH";
                 content += "</h5>";
-                content += "<h5 class='rainChance'>";
-                content += "Chance of rain: " + data.daily.data[2].precipProbability * 100 + "%";
-                content += "</h5>";
+
 
                 $('#card3').append(content);
                 var icons = [
