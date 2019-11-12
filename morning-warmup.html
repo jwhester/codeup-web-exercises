@@ -334,12 +334,22 @@
     //     }
     //
     // }
-    function randomBoolean() {
-        x = Math.floor((Math.random()*2));
-        switch (x) {
-            case 0: return true;
-            case 1: return false;
-        }
+    // function randomBoolean() {
+    //     x = Math.floor((Math.random()*2));
+    //     switch (x) {
+    //         case 0: return true;
+    //         case 1: return false;
+    //     }
+    // }
+    var arr = [1,2,3,4,5,6,7,8];
+    function arrayEven(arr) {
+        var bucket = [];
+        arr.forEach(function (num) {
+            if (num %2 === 0){
+                bucket.push(num);
+            }
+        });
+        return bucket;
     }
 </script>
 <!--<p>Facebook</p>-->
