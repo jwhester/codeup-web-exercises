@@ -351,7 +351,15 @@
     //     });
     //     return bucket;
     // }
-
+    function evenPromise(num) {
+        return new Promise(function (resolve, reject) {
+            if (num %2 === 0){
+                resolve(num + " is an even number");
+            } else {
+                reject(num + " is not even")
+            }
+        })
+    }
 </script>
 <!--<p>Facebook</p>-->
 <!--<p>Google</p>-->
