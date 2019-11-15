@@ -8,6 +8,11 @@
 <h1>Deimos</h1>
 <p>These are my morning warmups:</p>
 
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
 <script>
     // function sumOfTwo(x, y) {
     //     return x + y;
@@ -351,15 +356,21 @@
     //     });
     //     return bucket;
     // }
-    function evenPromise(num) {
-        return new Promise(function (resolve, reject) {
-            if (num %2 === 0){
-                resolve(num + " is an even number");
-            } else {
-                reject(num + " is not even")
-            }
+    // function evenPromise(num) {
+    //     return new Promise(function (resolve, reject) {
+    //         if (num %2 === 0){
+    //             resolve(num + " is an even number");
+    //         } else {
+    //             reject(num + " is not even")
+    //         }
+    //     })
+    // }
+    function promise(){
+        return new Promise(function (resolve) {
+            resolve($('body').html('<h1>Hello</h1>'));
         })
     }
+    promise();
 </script>
 <!--<p>Facebook</p>-->
 <!--<p>Google</p>-->
