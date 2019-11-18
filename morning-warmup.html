@@ -365,12 +365,16 @@
     //         }
     //     })
     // }
-    function promise(){
-        return new Promise(function (resolve) {
-            resolve($('body').html('<h1>Hello</h1>'));
-        })
+    // function promise(){
+    //     return new Promise(function (resolve) {
+    //         resolve($('body').html('<h1>Hello</h1>'));
+    //     })
+    // }
+    // promise();
+    function returnPi6() {
+        let x = parseFloat(Math.PI);
+        return x.toFixed(6);
     }
-    promise();
 </script>
 <!--<p>Facebook</p>-->
 <!--<p>Google</p>-->
